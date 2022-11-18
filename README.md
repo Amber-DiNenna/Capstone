@@ -18,7 +18,7 @@ https://github.com/users/Amber-DiNenna/projects/1/views/1
 ##### HTML
 ##### CSS
 
-## Applications
+## Application Functionality
 
 ### Users
 
