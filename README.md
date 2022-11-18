@@ -2,7 +2,9 @@
 
 # Kitchen Management Project
 
-This is a project that would make it easier for restaurant kitchen employees to communicate and know what to expect when heading into their shifts. It can also help kitchen managers clearly outline what is expected of employees during their shifts. My biggest goal with this project is to have the ability to create a searchable database that connects ingredients/recipes/prep lists/inventory.
+This is a project that would make it easier for restaurant kitchen employees to communicate and know what to expect when heading into their shifts. It can also help kitchen managers clearly outline what is expected of employees during their shifts. 
+
+Another main goal of this project is to be able to create a searchable database that allows the ability to connect/cross-reference ingredients/recipes/prep lists/inventory.
 
 ## GitHub Project Board Link
 
