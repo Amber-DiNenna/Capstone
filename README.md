@@ -6,11 +6,11 @@ This is a project that would make it easier for restaurant kitchen employees to 
 
 ## Technologies 
 
-Django
-Python
-JavaScript
-HTML
-CSS
+##### Django
+##### Python
+##### JavaScript
+##### HTML
+##### CSS
 
 ## Applications
 
