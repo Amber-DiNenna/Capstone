@@ -2,7 +2,11 @@
 
 # Kitchen Management Project
 
-This is a project that would make it easier for restaurant kitchen employees to communicate and know what to expect when heading into their shifts. It can also help kitchen managers clearly outline what is expected of employees during their shifts. 
+This is a project that would make it easier for restaurant kitchen employees to communicate and know what to expect when heading into their shifts. It can also help kitchen managers clearly outline what is expected of employees during their shifts. My biggest goal with this project is to have the ability to create a searchable database that connects ingredients/recipes/prep lists/inventory.
+
+## GitHub Project Board Link
+
+https://github.com/users/Amber-DiNenna/projects/1/views/1
 
 ## Technologies 
 
@@ -44,10 +48,23 @@ A master prep list with components organized by menu items/headers. Provide link
 
 ### Recipes
 
+Searchable database that links to recipe 'cards'. Links can be added to prep list items. Maybe ability to hide amounts based on clearance?
 
+recipes {
+   item:
+   component of: []
+   ingredients: []
+   directions:
+   prep time:
+   cooking time:
+   batch size:
+   in use: true/false
+   image link: 
+}
 
-### Order Sheets
+#### BONUS: Order Sheets
 
+Would like the ability to integrate CSV files from purveyors to create easy ordering guides.
 
 #### BONUS: Notes
 
