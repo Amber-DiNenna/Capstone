@@ -1,6 +1,6 @@
 # CAPSTONE 
 
-# Kitchen Management Project
+# Kitchen Management Project Overview
 
 This is a project that would make it easier for restaurant kitchen employees to communicate and know what to expect when heading into their shifts. It can also help kitchen managers clearly outline what is expected of employees during their shifts. 
 
