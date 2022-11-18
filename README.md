@@ -1,2 +1,2 @@
-# Capstone
-Kitchen Management Project
+# CAPSTONE: Kitchen Management Project
+
