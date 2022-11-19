@@ -20,6 +20,10 @@ https://github.com/users/Amber-DiNenna/projects/1/views/1
 
 ## Application Functionality
 
+### Admin
+
+Management can edit checklists, assign roles/access to users, add/edit recipes, edit inventory/prep lists.
+
 ### Users
 
 User app would allow management to edit employee access to other applications, based on position or responsibilities. This would also support communication, transparency, and accountability by adding a timestamp and user name signature to whiteboard, notes, checklists, and prep list.
