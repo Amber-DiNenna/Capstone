@@ -36,7 +36,7 @@ Will render links for any apps the employee is allowed to see.
 
 A kind of kanban board with two main columns: 'TO DO' and 'NEEDS'. When each item is either added or checked off, a timestamp and user name will be attached. Should also have ability to 'undo' action. When checked off, item will be faded and moved to the bottom of the list, to ultimately be "erased" by a manager. 
 
-### UPDATES: 86'd / Welcomings / Changes List
+### Updates: 86'd / Welcomings / Changes List
 
 Blog format that provides communication between management/BOH/FOH about changes, attaching user name and timestamps to posts. Can color code to denote type of change. Include ability to attach photos. Chronological order allows employees coming in from their weekend/vacation to see all changes that happened during their absence.
 
