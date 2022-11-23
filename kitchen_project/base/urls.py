@@ -3,5 +3,24 @@ from . import views
 
 app_name = 'base'
 urlpatterns = [
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('changes/', views.changes, name='changes'),
+    path('inventory/', views.inventory, name='inventory'),
+    path('prep/', views.prep, name='prep'),
+    path('whiteboard/', views.whiteboard, name='whiteboard'),
+    path('checklist/', views.checklist, name='checklist'),
+    path('recipes/', views.recipes, name='recipes'),
 ]
+
+
+# def inventory
+
+# def recipes
+
+# def prep_list
+
+# def whiteboard
+
+# def changes
+
+# def checklist
