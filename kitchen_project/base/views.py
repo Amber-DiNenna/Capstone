@@ -5,4 +5,4 @@ def home(request):
     context = {
         'message': 'Hello World!'
     }
-    return render(request, 'users/home.html', context)
+    return render(request, 'home.html', context)
