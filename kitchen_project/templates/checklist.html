@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>{{ checklist.name }}</h1>
+
+{% comment %} <div>
+  {% for checklist in checklists %}
+  <div>
+    <h5>{{ checklist.id }} -- <a href='/checklist/{{checklist.id}}'>{{ checklist.name }}</a><h5>
+  </div>
+  {% endfor %}
+</div> {% endcomment %}
+
+{% endblock content %}

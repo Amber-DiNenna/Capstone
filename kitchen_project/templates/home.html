@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Kitchen Manager</title>
-  </head>
-  <body>
-    <h1>{{ message }}</h1>
-  </body>
-</html>
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Home Template</h1>
+
+<div>
+  {% for checklist in checklists %}
+  <div>
+    <h5><a href='/checklist/{{checklist.id}}'>{{ checklist.name }}</a><h5>
+  </div>
+  {% endfor %}
+</div>
+
+{% comment %} put links for all the apps/htmls {% endcomment %}
+
+{% endblock content %}
