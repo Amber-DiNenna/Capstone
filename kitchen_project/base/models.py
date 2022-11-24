@@ -6,10 +6,15 @@ class Checklist(models.Model):
   # clear =
   # shift =
   # participants
-  # updated = models.DateTimeField(auto_now=True)
-  # created = models.DateTimeField(auto_now_add=True)
-  checked = models.BooleanField()
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True)
+  # shift_lists = (
+  #   ('Opening'),
+  #   ('Closing'),
+  # )
+  checked = models.BooleanField(null=True)
   task = models.CharField(max_length=200)
+  # shift = models.CharField(max_length=1, choices=shift_lists)
 
   def __str__(self):
     return self.name
