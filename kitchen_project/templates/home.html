@@ -4,14 +4,30 @@
 
 <h1>Home Template</h1>
 
-{% comment %} <div>
-  {% for checklist in checklists %}
-  <div>
-    <h5><a href='/checklist/{{checklist.id}}'>{{ checklist.name }}</a><h5>
-  </div>
-  {% endfor %}
-</div> {% endcomment %}
 
-{% comment %} put links for all the apps/htmls {% endcomment %}
+<a href='changes/'>
+  <h3>Changes</h3>
+</a>
+
+<a href='whiteboard/'>
+  <h3>Whiteboard</h3>
+</a>
+
+<a href='checklist/'>
+  <h3>Checklists</h3>
+</a>
+
+<a href='inventory/'>
+  <h3>Inventory</h3>
+</a>
+
+<a href='prep/'>
+  <h3>Prep List</h3>
+</a>
+
+<a href='recipes/'>
+  <h3>Recipe Book</h3>
+</a>
+
 
 {% endblock content %}

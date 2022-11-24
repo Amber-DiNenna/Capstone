@@ -2,14 +2,36 @@
 
 {% block content %}
 
-<h1>{{ checklist.name }}</h1>
+<h1>Checklists Template</h1>
 
-{% comment %} <div>
-  {% for checklist in checklists %}
-  <div>
-    <h5>{{ checklist.id }} -- <a href='/checklist/{{checklist.id}}'>{{ checklist.name }}</a><h5>
-  </div>
+{% comment %} <h2>{{ tasks }}</h2>
+
+<div>
+  {% for task in tasks %}
+    <p>{{ task.shift }}</p>
   {% endfor %}
 </div> {% endcomment %}
 
+
+<div>
+  {% for task in tasks %}
+    {% if task.shift != 'Opening' %}
+      <div>
+        <h2>Opening</h2>
+        <p>{{ task.name }}</p>
+      </div>
+    {% else %}
+    <div>
+      <h2>Closing</h2>
+      <p>{{ task.checked }}{{ task.name }}</p>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
 {% endblock content %}
+
+
+
+
+{% comment %} (need to create links for opening and closing checklist pages?) {% endcomment %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Checklist
+from .models import Tasks
 
 # checklists = [
 #     {'id':1, 'name': 'Opening Checklist'},
@@ -8,17 +8,20 @@ from .models import Checklist
 # ]
 
 def home(request):
-    checklists = Checklist.objects.all()
-    context = {'checklists': checklists}
-    return render(request, 'home.html', context)
+    # checklists = Tasks.objects.all()
+    # context = {'checklists': checklists}
+    return render(request, 'home.html')
 
-def checklist(request, pk):
+# def checklist(request, pk):
     # checklist = None
     # for i in checklists:
     #     if i['id'] == int(pk):
     #         checklist = i
-    checklist = Checklist.objects.get(id=pk)
-    context = {'checklist': checklist}
+def checklist(request):
+    # checklist = Tasks.objects.get('shift')
+    # context = {'checklist': checklist}
+    tasks = Tasks.objects.all()
+    context = {'tasks': tasks}
     return render(request, 'checklist.html', context)
 
 def changes(request):
