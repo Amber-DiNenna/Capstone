@@ -6,6 +6,7 @@ class Checklist(models.Model):
   # clear =
   # shift =
   # participants
+  name = models.CharField(max_length=200)
   updated = models.DateTimeField(auto_now=True)
   created = models.DateTimeField(auto_now_add=True)
   # shift_lists = (

@@ -4,13 +4,13 @@
 
 <h1>Home Template</h1>
 
-<div>
+{% comment %} <div>
   {% for checklist in checklists %}
   <div>
     <h5><a href='/checklist/{{checklist.id}}'>{{ checklist.name }}</a><h5>
   </div>
   {% endfor %}
-</div>
+</div> {% endcomment %}
 
 {% comment %} put links for all the apps/htmls {% endcomment %}
 

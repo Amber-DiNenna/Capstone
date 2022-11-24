@@ -17,7 +17,7 @@ def checklist(request, pk):
     # for i in checklists:
     #     if i['id'] == int(pk):
     #         checklist = i
-    checklist = Checklist.objects.get()
+    checklist = Checklist.objects.get(id=pk)
     context = {'checklist': checklist}
     return render(request, 'checklist.html', context)
 
