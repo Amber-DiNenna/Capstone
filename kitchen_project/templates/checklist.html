@@ -14,19 +14,23 @@
 
 
 <div>
-  {% for task in tasks %}
-    {% if task.shift != 'Opening' %}
-      <div>
-        <h2>Opening</h2>
-        <p>{{ task.name }}</p>
-      </div>
-    {% else %}
-    <div>
-      <h2>Closing</h2>
-      <p>{{ task.checked }}{{ task.name }}</p>
-    </div>
-    {% endif %}
-  {% endfor %}
+  <div>
+    <h2>Opening</h2>
+    {% for task in tasks %}
+      {% if task.shift == 'Opening' %}
+    <p>{{ task.name }}</p>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div>
+    <h2>Closing</h2>
+    {% for task in tasks %}
+      {% if task.shift == 'Closing' %}
+    <p>{{ task.name }}</p>
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock content %}
