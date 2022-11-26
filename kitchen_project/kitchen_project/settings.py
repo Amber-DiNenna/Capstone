@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
+    'inventory_sheet',
+    'prep_list',
+    'updates_blog',
+    'recipe_book',
 ]
 
 MIDDLEWARE = [
