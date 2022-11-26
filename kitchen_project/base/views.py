@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Tasks
+from .models import Tasks, Update
 
 def home(request):
     return render(request, 'home.html')
@@ -13,8 +13,13 @@ def checklist(request):
 def whiteboard(request):
     return render(request, 'whiteboard.html')
 
+# def changes(request):
+#     return render(request, 'changes.html')
+
 def changes(request):
-    return render(request, 'changes.html')
+    update = Update.objects.all()
+    context = {'update': update}
+    return render(request, 'changes.html', context)
 
 def inventory(request):
     return render(request, 'inventory.html')

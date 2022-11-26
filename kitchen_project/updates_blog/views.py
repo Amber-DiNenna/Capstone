@@ -8,7 +8,7 @@ from django.views.generic import ListView
 #     model = Update
 #     template_name = 'home.html'
 
-def changes(request):
-    change = Update.objects.all()
-    context = {'change': change}
-    return render(request, 'changes.html', context)
+# def changes(request):
+#     change = Update.objects.all()
+#     context = {'change': change}
+#     return render(request, 'changes.html', context)
