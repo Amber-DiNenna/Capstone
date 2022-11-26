@@ -2,6 +2,20 @@
 
 {% block content %}
 
-<h1>Change Blog Template</h1>
+<h1>Updates Blog</h1>
+<br>
+
+<div>
+  <div>
+    {% for update in updates %}
+    <h2>{{ update.type }} : {{ update.subject }}</h2>
+    <p>{{ update.description }}</p>
+    {% comment %} <p>{{ update.user }}</p> {% endcomment %}
+    <p>{{ update.created }}</p>
+
+  </div>
+  <br><br>
+    {% endfor %}
+</div>
 
 {% endblock content %}
