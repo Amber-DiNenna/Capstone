@@ -3,24 +3,30 @@
 {% block content %}
 
 <h1>Checklists Template</h1>
+<br>
 
 <div>
   <div>
     <h2>Opening</h2>
     {% for task in tasks %}
       {% if task.shift == 'Opening' %}
-    <p>{{ task.name }}</p>
+    <p><input type="checkbox" id="{{ task.name }}" name="{{ task.name }}" value="{{ task.checked }}">
+    <label for="{{ task.name }}">{{ task.name }}</label></p>
       {% endif %}
     {% endfor %}
+    <button type='submit'>Done</button><button type='submit'>Clear</button>
+    {% comment %} if done, save somehow and add username and timestamp?  {% endcomment %}
   </div>
-
+<br><br>
   <div>
     <h2>Closing</h2>
     {% for task in tasks %}
       {% if task.shift == 'Closing' %}
-    <p>{{ task.name }}</p>
+    <p><input type="checkbox" id="{{ task.name }}" name="{{ task.name }}" value="{{ task.checked }}">
+    <label for="{{ task.name }}">{{ task.name }}</label></p>
       {% endif %}
     {% endfor %}
+    <button type='submit'>Done</button><button type='submit'>Clear</button>
   </div>
 </div>
 
