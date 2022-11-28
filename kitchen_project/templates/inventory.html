@@ -1,7 +1,32 @@
 {% extends 'main.html' %}
 
+
 {% block content %}
 
-<h1>Inventory Template</h1>
+<h1>Inventory Sheet</h1>
+
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>Storage Area</th>
+        <th>Item</th>
+        <th>Par</th>
+        <th>On Hand</th>
+      </tr>
+      {% for item in items %}
+      <tr>
+        <td>{{ item.located }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.par }}</td>
+        <td><input value='{{ item.on_hand }}' placeholder='Enter amount on hand'></input></td>
+        <td><button value='{{ item.to_whiteboard }}'>Add to needs</button></td>
+      </tr>
+    </table>
+    {% endfor %}
+  </div>
+  <br><br>
+
+</div>
 
 {% endblock content %}
