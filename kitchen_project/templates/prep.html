@@ -2,6 +2,30 @@
 
 {% block content %}
 
-<h1>Prep List Template</h1>
+<h1>Master Prep List</h1>
+
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>Component Of</th>
+        <th>Prep Task</th>
+        <th>Par</th>
+        <th>On Hand</th>
+      </tr>
+      {% for todo in todos %}
+      <tr>
+        <td>{{ todo.component_of }}</td>
+        <td>{{ todo.name }}</td>
+        <td>{{ todo.par }}</td>
+        <td><input value='{{ todo.on_hand }}' placeholder='Enter amount on hand'></input></td>
+        <td><button value='{{ todo.to_whiteboard }}'>Add to do</button></td>
+      </tr>
+    </table>
+    {% endfor %}
+  </div>
+  <br><br>
+
+</div>
 
 {% endblock content %}

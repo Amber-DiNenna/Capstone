@@ -2,39 +2,39 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Tasks(models.Model):
-  updated = models.DateTimeField(auto_now=True)
-  created = models.DateTimeField(auto_now_add=True)
+  # user =
   shift_lists = (
     ('Opening', 'Opening'),
     ('Closing', 'Closing'),
   )
-  checked = models.BooleanField(null=True)
-  name = models.CharField(max_length=200)
   shift = models.CharField(max_length=7, choices=shift_lists)
+  name = models.CharField(max_length=200)
+  checked = models.BooleanField(null=True)
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True)
 
   def __str__(self):
     return self.name
 
 class Update(models.Model):
-  updated = models.DateTimeField(auto_now=True)
-  created = models.DateTimeField(auto_now_add=True)
+  # user =
   update_types = (
     ('New', 'New'),
     ('Out', 'Out'),
     ('Gone', 'Gone'),
     ('Change', 'Change'),
   )
-  # checked = models.BooleanField(null=True)
+  type = models.CharField(max_length=6, choices=update_types)
   subject = models.CharField(max_length=200)
   description = models.TextField()
-  type = models.CharField(max_length=6, choices=update_types)
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True)
 
   def __str__(self):
     return self.subject
 
 class Inventory(models.Model):
-  updated = models.DateTimeField(auto_now=True)
-  created = models.DateTimeField(auto_now_add=True)
+  # user =
   storage_locations = (
     ('Dry', 'Dry'),
     ('Frozen', 'Frozen'),
@@ -42,11 +42,6 @@ class Inventory(models.Model):
     ('Lowboy', 'Lowboy'),
   )
   located = models.CharField(max_length=6, choices=storage_locations)
-  to_whiteboard = models.BooleanField(null=True)
-  name = models.CharField(max_length=200)
-  par = models.CharField(max_length=200)
-  on_hand = models.CharField(max_length=200, null=True)
-  exp_date = models.CharField(max_length=200, null=True)
   flag_choices = (
     ('Low', 'Low'),
     ('Out', 'Out'),
@@ -54,6 +49,77 @@ class Inventory(models.Model):
     ('Expiring', 'Expiring'),
   )
   flag = models.CharField(max_length=8, choices=flag_choices, null=True)
+  to_whiteboard = models.BooleanField(null=True)
+  name = models.CharField(max_length=200)
+  par = models.CharField(max_length=200)
+  on_hand = models.CharField(max_length=200, null=True)
+  exp_date = models.CharField(max_length=200, null=True)
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True)
 
   def __str__(self):
     return self.name
+
+class Prep(models.Model):
+  # user =
+  menu_headings = (
+    ('Appetizers', 'Appetizers'),
+    ('Entrees', 'Entrees'),
+    ('Sides', 'Sides'),
+    ('Desserts', 'Desserts'),
+  )
+  heading = models.CharField(max_length=10, choices=menu_headings)
+  flag_choices = (
+    ('Low', 'Low'),
+    ('Out', 'Out'),
+    ('Dead', 'Dead'),
+    ('Expiring', 'Expiring'),
+  )
+  flag = models.CharField(max_length=8, choices=flag_choices, null=True)
+  to_whiteboard = models.BooleanField(null=True)
+  name = models.CharField(max_length=200)
+  par = models.CharField(max_length=200)
+  on_hand = models.CharField(max_length=200, null=True)
+  exp_date = models.CharField(max_length=200, null=True)
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True)
+  in_use = models.BooleanField()
+  component_of = models.TextField()
+  details = models.TextField(null=True)
+  # images =
+
+  # component_of = reference recipe card?
+  # HOW TO LINK TO RECIPE CARD? DROPDOWN WITH ALL MENU ITEMS? MAYBE MAKE A DISH CLASS AND LINK TO ALL? OR RECIPE? OR MAKE MENU HEADINGS/MENU ITEMS DICTIONARIES IN GLOBAL SCOPE AND REFERENCE THEM IN EACH CLASS?
+
+  def __str__(self):
+    return self.name
+
+class Recipe(models.Model):
+  # user =
+  menu_headings = (
+    ('Appetizers', 'Appetizers'),
+    ('Entrees', 'Entrees'),
+    ('Sides', 'Sides'),
+    ('Desserts', 'Desserts'),
+  )
+  heading = models.CharField(max_length=10, choices=menu_headings)
+  # how to list as a component of multiple headings?
+  dish = models.CharField(max_length=200)
+  prep_tasks = models.TextField(null=True)
+  # prep_tasks = reference prep db?
+  ingredients = models.TextField()
+  directions = models.TextField()
+  prep_time = models.CharField(max_length=200)
+  cooking_time = models.CharField(max_length=200)
+  batch_size = models.CharField(max_length=200)
+  par = models.CharField(max_length=200, null=True)
+  shelf_life = models.CharField(max_length=200, null=True)
+  updated = models.DateTimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True)
+  in_use = models.BooleanField()
+  component_of = models.TextField(null=True)
+  # images =
+  # component_of = HOW TO LINK TO RECIPE CARD? DROPDOWN WITH ALL MENU ITEMS? MAYBE MAKE A DISH CLASS AND LINK TO ALL? OR RECIPE?
+
+  def __str__(self):
+    return self.dish

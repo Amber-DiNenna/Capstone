@@ -3,5 +3,31 @@
 {% block content %}
 
 <h1>Whiteboard Template</h1>
+<br>
+
+<div>
+  <div>
+    <h2>NEEDS</h2>
+    {% for item in items %}
+      {% if item.to_whiteboard == True %}
+      <p><a>{{ item.name }}</a></p>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <br><br>
+
+  <div>
+    <h2>TO DO</h2>
+    {% for todo in todos %}
+      {% if todo.to_whiteboard == True %}
+      <p><a>{{ todo.name }}</a></p>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <br><br>
 
 {% endblock content %}
+
+{% comment %} NEED TO ADD CHECKBOXES AND ALL THAT SAME AS CHECKLIST {% endcomment %}
