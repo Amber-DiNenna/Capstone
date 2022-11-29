@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Alumni+Sans+Pinstripe&family=Cairo+Play:wght@700&family=Kaushan+Script&family=Megrim&family=News+Cycle&family=Notable&family=Raleway:wght@100&family=Roboto+Slab:wght@100&family=Rock+Salt&family=Thasadith&display=swap');
+
+/* font-family: 'Cairo Play', cursive;
+font-family: 'Kaushan Script', cursive; (sharpie)
+font-family: 'Megrim', cursive; (weird triangles)
+font-family: 'Roboto Slab', serif; (good for lists and whatever)
+font-family: 'Rock Salt', cursive; (babes handwriting)
+
+
+font-family: 'Advent Pro', sans-serif; (tight and very thin)
+
+font-family: 'News Cycle', sans-serif; (tight thin normal)
+font-family: 'Notable', sans-serif; (wide and thick)
+font-family: 'Raleway', sans-serif; (tight, matches triangles)
+font-family: 'Thasadith', sans-serif; (tight thin normal)*/
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color:white;
+  color:darkslategray;
+}
+
+a {
+  color: darkslategray;
+  text-decoration: none;
+}
+
+a:hover {
+  color:darkgray;
+}
+
+h2 {
+  color:peru;
+}
+
+.h2-header {
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+button {
+  background-color: darkgray;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  padding: .5rem;
+  border: none;
+  border-radius: .25rem;
+}
+
+/*     NAV BAR-------------------------------------------     */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+}
+
+#micro-logo {
+  font-size: 4rem;
+  color:darkslategray;
+  font-family: 'Megrim', cursive;
+}
+
+#sharpie {
+  width: 15%;
+}
+
+/* ^^^ NAV BAR------------------------------------------- ^^^ */
+
+#main-menu-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+
+}
+
+#whiteboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  /* background-color: whitesmoke; */
+}
+
+#updates-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.update-div {
+  text-align: center;
+}
+
+/* TABLES ---------------------------------------- */
+
+table {
+  font-family: 'Raleway', sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  width: 10%;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+input {
+  background-color: white;
+  color: darkgray;
+  font-family: 'Raleway', sans-serif;
+  padding: .5rem;
+  border: 1px solid darkgrey;
+  border-radius: .25rem;
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */

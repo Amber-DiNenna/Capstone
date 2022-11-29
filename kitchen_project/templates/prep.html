@@ -1,17 +1,18 @@
 {% extends 'main.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1>Master Prep List</h1>
+<h2 class='h2-header'>Main Prep List</h2>
 
 <div>
   <div>
     <table>
       <tr>
-        <th>Component Of</th>
-        <th>Prep Task</th>
-        <th>Par</th>
-        <th>On Hand</th>
+        <th>Component Of  &#8593; &#8595;</th>
+        <th>Prep Task &#8593; &#8595;</th>
+        <th>Par &#8593; &#8595;</th>
+        <th>On Hand &#8593; &#8595;</th>
+        <th>ADD TO WHITEBOARD</th>
       </tr>
       {% for todo in todos %}
       <tr>
@@ -19,10 +20,11 @@
         <td>{{ todo.name }}</td>
         <td>{{ todo.par }}</td>
         <td><input value='{{ todo.on_hand }}' placeholder='Enter amount on hand'></input></td>
-        <td><button value='{{ todo.to_whiteboard }}'>Add to do</button></td>
+        <td><button value='{{ todo.to_whiteboard }}'>ADD</button></td>
       </tr>
+      {% endfor %}
     </table>
-    {% endfor %}
+
   </div>
   <br><br>
 

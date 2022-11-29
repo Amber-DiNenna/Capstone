@@ -1,12 +1,12 @@
 {% extends 'main.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1>Whiteboard Template</h1>
+<h2 class='h2-header'>WHITEBOARD</h2>
 <br>
 
-<div>
-  <div>
+<div id='whiteboard'>
+  <div id='needs'>
     <h2>NEEDS</h2>
     {% for item in items %}
       {% if item.to_whiteboard == True %}
@@ -17,7 +17,7 @@
 
   <br><br>
 
-  <div>
+  <div id='todo'>
     <h2>TO DO</h2>
     {% for todo in todos %}
       {% if todo.to_whiteboard == True %}

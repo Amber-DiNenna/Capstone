@@ -1,33 +1,34 @@
 {% extends 'main.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1>Home Template</h1>
+<h2 class='h2-header'>WELCOME, {{ user.name }}!</h2>
 
+<div id='main-menu-div'>
+  <a href='changes/'>
+    <h3>UPDATES FEED</h3>
+  </a>
 
-<a href='changes/'>
-  <h3>Updates</h3>
-</a>
+  <a href='whiteboard/'>
+    <h3>WHITEBOARD</h3>
+  </a>
 
-<a href='whiteboard/'>
-  <h3>Whiteboard</h3>
-</a>
+  <a href='checklist/'>
+    <h3>CHECKLISTS</h3>
+  </a>
 
-<a href='checklist/'>
-  <h3>Checklists</h3>
-</a>
+  <a href='prep/'>
+    <h3>PREP LIST</h3>
+  </a>
 
-<a href='inventory/'>
-  <h3>Inventory</h3>
-</a>
+  <a href='recipes/'>
+    <h3>RECIPE BOOK</h3>
+  </a>
 
-<a href='prep/'>
-  <h3>Prep List</h3>
-</a>
-
-<a href='recipes/'>
-  <h3>Recipe Book</h3>
-</a>
+  <a href='inventory/'>
+    <h3>INVENTORY SHEET</h3>
+  </a>
+</div>
 
 
 {% endblock content %}

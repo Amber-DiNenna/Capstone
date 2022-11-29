@@ -1,13 +1,14 @@
 {% extends 'main.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1>Updates Blog</h1>
+<h2 class='h2-header'>UPDATES FEED</h2>
 <br>
 
-<div>
-  <div>
+<div id='updates-container'>
+  <div class='update-div'>
     {% for update in updates %}
+    {% comment %} how do i change the color of the update.type??? {% endcomment %}
     <h2>{{ update.type }} : {{ update.subject }}</h2>
     <p>{{ update.description }}</p>
     {% comment %} <p>{{ update.user }}</p> {% endcomment %}

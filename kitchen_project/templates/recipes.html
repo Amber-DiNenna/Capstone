@@ -1,12 +1,12 @@
 {% extends 'main.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1>Recipe Book</h1>
+<h2 class='h2-header'>Recipe Book</h2>
 <br>
 
-<div>
-  <div>
+<div id='recipe-book'>
+  <div class='menu-section'>
     <h2>Appetizers</h2>
     {% for card in cards %}
       {% if card.heading == 'Appetizers' %}
@@ -17,7 +17,7 @@
 
   <br><br>
 
-  <div>
+  <div class='menu-section'>
     <h2>Entrees</h2>
     {% for card in cards %}
       {% if card.heading == 'Entrees' %}
@@ -29,7 +29,7 @@
   <br><br>
 
   <div>
-    <h2>Sides</h2>
+    <h2 class='menu-section'>Sides</h2>
     {% for card in cards %}
       {% if card.heading == 'Sides' %}
       <p><a>{{ card.dish }}</a></p>
@@ -40,7 +40,7 @@
   <br><br>
 
   <div>
-    <h2>Desserts</h2>
+    <h2 class='menu-section'>Desserts</h2>
     {% for card in cards %}
       {% if card.heading == 'Desserts' %}
       <p><a>{{ card.dish }}</a></p>
@@ -54,3 +54,5 @@
 
 
 {% endblock content %}
+
+{% comment %} HOW TO LINK TO RECIPE CARDS?? {% endcomment %}

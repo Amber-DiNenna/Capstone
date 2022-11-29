@@ -1,29 +1,31 @@
 {% extends 'main.html' %}
-
+{% load static %}
 
 {% block content %}
 
-<h1>Inventory Sheet</h1>
+<h2 class='h2-header'>INVENTORY SHEET</h2>
 
 <div>
-  <div>
+  <div id='table-div'>
     <table>
-      <tr>
-        <th>Storage Area</th>
-        <th>Item</th>
-        <th>Par</th>
-        <th>On Hand</th>
+      <tr id='table-headers'>
+        <th>STORAGE AREA &#8593; &#8595;</th>
+        <th>ITEM  &#8593; &#8595;</th>
+        <th>PAR &#8593; &#8595;</th>
+        <th>ON HAND &#8593; &#8595;</th>
+        <th>TO WHITEBOARD &#8593; &#8595;</th>
       </tr>
       {% for item in items %}
-      <tr>
+      <tr class='table-row'>
         <td>{{ item.located }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.par }}</td>
         <td><input value='{{ item.on_hand }}' placeholder='Enter amount on hand'></input></td>
-        <td><button value='{{ item.to_whiteboard }}'>Add to needs</button></td>
+        <td><button value='{{ item.to_whiteboard }}'>ADD</button></td>
       </tr>
+      {% endfor %}
     </table>
-    {% endfor %}
+
   </div>
   <br><br>
 
