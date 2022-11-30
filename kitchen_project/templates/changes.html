@@ -10,10 +10,11 @@
   <div class='update-div'>
 
     {% comment %} how do i change the color of the update.type??? {% endcomment %}
-    <h2>{{ update.type }} : {{ update.subject }}</h2>
+    <h2>{{ update.type }}</h2>
+    <h2>{{ update.subject }}</h2>
     <p>{{ update.description }}</p>
     {% comment %} <p>{{ update.user }}</p> {% endcomment %}
-    <p class='timestamp'>{{ update.created }}</p>
+    <p class='timestamp'>{{ update.user }} @ {{ update.created }}</p>
   </div>
   <br>
     {% endfor %}

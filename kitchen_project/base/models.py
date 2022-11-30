@@ -37,7 +37,7 @@ class Update(models.Model):
     return self.subject
 
 class Inventory(models.Model):
-  user = models.ForeignKey(CustomUser, related_name='inventory', on_delete=models.CASCADE)
+  user = models.ForeignKey(CustomUser, related_name='inventory', on_delete=models.CASCADE, null=True)
   storage_locations = (
     ('Dry', 'Dry'),
     ('Frozen', 'Frozen'),
@@ -56,6 +56,7 @@ class Inventory(models.Model):
   name = models.CharField(max_length=200)
   par = models.CharField(max_length=200)
   on_hand = models.CharField(max_length=200, blank=True)
+  need = models.CharField(max_length=200, blank=True)
   exp_date = models.CharField(max_length=200, blank=True)
   updated = models.DateTimeField(auto_now=True)
   created = models.DateTimeField(auto_now_add=True)
@@ -83,6 +84,7 @@ class Prep(models.Model):
   name = models.CharField(max_length=200)
   par = models.CharField(max_length=200)
   on_hand = models.CharField(max_length=200, blank=True)
+  need = models.CharField(max_length=200, blank=True)
   exp_date = models.CharField(max_length=200, blank=True)
   updated = models.DateTimeField(auto_now=True)
   created = models.DateTimeField(auto_now_add=True)

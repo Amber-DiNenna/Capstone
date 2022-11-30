@@ -3,7 +3,7 @@
 {% block content %}
 
 <h2 class='h2-header'>CHECKLISTS</h2>
-<br>
+
 
 <div id='checklists-container'>
   <div class='checklist-div'>
@@ -16,6 +16,7 @@
     {% endfor %}
     <button type='submit'>DONE</button><button type='submit'>CLEAR</button>
     {% comment %} if done, save somehow and add username and timestamp?  {% endcomment %}
+    {% comment %} <p class='timestamp'>{{ task.user }} @ {{ task.updated }}</p> {% endcomment %}
   </div>
 <br><br>
   <div class='checklist-div'>

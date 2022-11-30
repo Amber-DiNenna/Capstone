@@ -161,6 +161,17 @@ hr {
   text-align: center;
 }
 
+#checklists-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.checklist-div {
+  text-align: center;
+}
+
 /* TABLES ---------------------------------------- */
 table {
   font-family: 'Raleway', sans-serif;
