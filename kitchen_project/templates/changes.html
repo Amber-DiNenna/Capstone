@@ -3,7 +3,7 @@
 {% block content %}
 
 <h2 class='h2-header'>UPDATES FEED</h2>
-<br>
+
 
 <div id='updates-container'>
   {% for update in updates %}
@@ -15,7 +15,7 @@
     {% comment %} <p>{{ update.user }}</p> {% endcomment %}
     <p class='timestamp'>{{ update.created }}</p>
   </div>
-  <br><br>
+  <br>
     {% endfor %}
 </div>
 

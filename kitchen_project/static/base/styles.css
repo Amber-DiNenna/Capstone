@@ -6,7 +6,6 @@ font-family: 'Megrim', cursive; (weird triangles)
 font-family: 'Roboto Slab', serif; (good for lists and whatever)
 font-family: 'Rock Salt', cursive; (babes handwriting)
 
-
 font-family: 'Advent Pro', sans-serif; (tight and very thin)
 font-family: 'News Cycle', sans-serif; (tight thin normal)
 font-family: 'Notable', sans-serif; (wide and thick)
@@ -38,7 +37,6 @@ a:hover {
 
 h2 {
   color:peru;
-
 }
 
 .h2-header {
@@ -48,8 +46,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.5rem;
-
+  font-size: 2rem;
 }
 
 button {
@@ -83,6 +80,27 @@ hr {
   border: 1px solid darkslategray;
 }
 
+/* .dropdown {
+
+}
+
+.dropbtn {
+  background-color: white;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+} */
+
 /* ^^^ NAV BAR------------------------------------------- ^^^ */
 
 #main-menu-div {
@@ -113,6 +131,7 @@ hr {
 
 .babe-writing {
   font-family: 'Rock Salt', cursive;
+  font-size: .25rem;
 }
 
 #updates-container {
@@ -120,22 +139,21 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
 }
 
 .update-div {
   text-align: center;
   border: 1px solid darkslategray;
-  border-radius: 1rem;
-  width: 50%;
+  border-radius: .5rem;
+  width: 70%;
   padding: 1rem;
 }
 
 .timestamp {
   color: darkgrey;
 }
-/* TABLES ---------------------------------------- */
 
+/* TABLES ---------------------------------------- */
 table {
   font-family: 'Raleway', sans-serif;
   border-collapse: collapse;
