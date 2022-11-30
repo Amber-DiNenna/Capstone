@@ -6,14 +6,14 @@
 <br>
 
 <div id='updates-container'>
+  {% for update in updates %}
   <div class='update-div'>
-    {% for update in updates %}
+
     {% comment %} how do i change the color of the update.type??? {% endcomment %}
     <h2>{{ update.type }} : {{ update.subject }}</h2>
     <p>{{ update.description }}</p>
     {% comment %} <p>{{ update.user }}</p> {% endcomment %}
-    <p>{{ update.created }}</p>
-
+    <p class='timestamp'>{{ update.created }}</p>
   </div>
   <br><br>
     {% endfor %}

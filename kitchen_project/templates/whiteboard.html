@@ -3,25 +3,27 @@
 {% block content %}
 
 <h2 class='h2-header'>WHITEBOARD</h2>
-<br>
+
 
 <div id='whiteboard'>
   <div id='needs'>
     <h2>NEEDS</h2>
+    {% comment %} <hr class='gray-hr'> {% endcomment %}
     {% for item in items %}
       {% if item.to_whiteboard == True %}
-      <p><a>{{ item.name }}</a></p>
+      <p class='babe-writing'><a>{{ item.name }}</a></p>
       {% endif %}
     {% endfor %}
   </div>
 
-  <br><br>
+  <br>
 
   <div id='todo'>
     <h2>TO DO</h2>
+    {% comment %} <hr class='gray-hr'> {% endcomment %}
     {% for todo in todos %}
       {% if todo.to_whiteboard == True %}
-      <p><a>{{ todo.name }}</a></p>
+      <p class='babe-writing'><a>{{ todo.name }}</a></p>
       {% endif %}
     {% endfor %}
   </div>

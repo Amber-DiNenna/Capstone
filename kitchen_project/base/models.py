@@ -20,10 +20,10 @@ class Task(models.Model):
 class Update(models.Model):
   # user =
   update_types = (
-    ('New', 'New'),
-    ('Out', 'Out'),
-    ('Gone', 'Gone'),
-    ('Change', 'Change'),
+    ('NEW', 'NEW'),
+    ('OUT', 'OUT'),
+    ('GONE', 'GONE'),
+    ('CHANGE', 'CHANGE'),
   )
   type = models.CharField(max_length=6, choices=update_types)
   subject = models.CharField(max_length=200)
