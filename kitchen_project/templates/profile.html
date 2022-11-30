@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+{% comment %}
+<div class="sub-nav">
+  <h4>Hello, {{user_profile.first_name}}!</h4>
+</div>
+
+ <main>
+  <div id="profile-div">
+    <a id='profile-back' href="{% url 'posts:home' %}">BACK</a>
+
+    <a id='edit-profile' href="{% url 'posts:home' %}">EDIT PROFILE</a>
+  </div>
+</main> {% endcomment %}
+
+{% endblock content %}

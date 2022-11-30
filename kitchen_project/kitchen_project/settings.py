@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
-    'users',
+    'users.apps.UsersConfig',
     # 'inventory_sheet.apps.InventorySheetConfig',
     # 'prep_list.apps.PrepListConfig',
     # 'updates_blog.apps.UpdatesBlogConfig',
@@ -130,3 +130,11 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.CustomUser'
+
+
+LOGIN_REDIRECT_URL = 'base:home'
+LOGOUT_REDIRECT_URL = 'base:home'
+
+LOGIN_URL = 'login'

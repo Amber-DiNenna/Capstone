@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+{% comment %} <h4 class="sub-nav">GET ON IN HERE!</h4>
+<main class="main-form">
+    <div class="form">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="LOGIN">
+        </form>
+    </div>
+</main>
+<a href="{% url 'users:signup' %}">SIGN UP</a> {% endcomment %}
+
+{% endblock content %}
