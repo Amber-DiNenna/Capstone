@@ -5,14 +5,33 @@ from .models import Update
 from .models import Inventory
 from .models import Prep
 from .models import Recipe
+from .models import CustomUser
+
+# shifts = ['Opening', 'Mid', 'Closing']
 
 def home(request):
     return render(request, 'home.html')
 
 def checklist(request):
+    # tasks = Task.objects.all()
+    # context = {'tasks': tasks}
+    # return render(request, 'checklist.html', context)
+    return render(request, 'checklist.html')
+
+def opening(request):
     tasks = Task.objects.all()
     context = {'tasks': tasks}
-    return render(request, 'checklist.html', context)
+    return render(request, 'opening.html', context)
+
+def mid(request):
+    tasks = Task.objects.all()
+    context = {'tasks': tasks}
+    return render(request, 'mid.html', context)
+
+def closing(request):
+    tasks = Task.objects.all()
+    context = {'tasks': tasks}
+    return render(request, 'closing.html', context)
 
 def changes(request):
     updates = Update.objects.all()

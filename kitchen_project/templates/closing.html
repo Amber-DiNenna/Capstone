@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<h2 class='h2-header'>CHECKLISTS</h2>
+
+
+<div id='checklists-container'>
+  <div class='checklist-div'>
+    <h2>CLOSING</h2>
+    {% for task in tasks %}
+      {% if task.shift == 'Closing' %}
+    <p><input type="checkbox" id="{{ task.name }}" name="{{ task.name }}" value="{{ task.checked }}">
+    <label for="{{ task.name }}">{{ task.name }}</label></p>
+      {% endif %}
+    {% endfor %}
+    <button type='submit'>DONE</button><button type='submit'>CLEAR</button>
+  </div>
+</div>
+
+{% endblock content %}
