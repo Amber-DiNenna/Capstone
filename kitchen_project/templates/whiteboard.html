@@ -8,10 +8,9 @@
 <div id='whiteboard'>
   <div id='needs'>
     <h2>NEEDS</h2>
-    {% comment %} <hr class='gray-hr'> {% endcomment %}
     {% for item in items %}
       {% if item.to_whiteboard == True %}
-      <p class='babe-writing'><a>{{ item.name }}</a></p>
+      <p class='babe-writing'>&#10004; &#10006;<a>{{ item.name }}</a></p>
       {% endif %}
     {% endfor %}
   </div>
@@ -20,16 +19,29 @@
 
   <div id='todo'>
     <h2>TO DO</h2>
-    {% comment %} <hr class='gray-hr'> {% endcomment %}
+
     {% for todo in todos %}
       {% if todo.to_whiteboard == True %}
-      <p class='babe-writing'><a>{{ todo.name }}</a></p>
+      <p class='babe-writing'>&#10004; &#10006;<a>{{ todo.name }}</a></p>
       {% endif %}
     {% endfor %}
   </div>
 
   <br><br>
+</div>
+<div id='whiteboard-input'>
+  <input placeholder='put form here?'></input>
+</div>
 
 {% endblock content %}
 
-{% comment %} NEED TO ADD CHECKBOXES AND ALL THAT SAME AS CHECKLIST {% endcomment %}
+{% comment %}
+
+I GUESS USE JS TO MAKE THE  CHECK AND THE X DO STUFF? MAYBE MAKE THEM @CLICK BUTTONS?
+
+V = CROSS OUT WITH CSS?
+X = CHANGE TO WHITEBOARD TO FALSE AND CLEAR OUT NEED FIELD?
+
+(LOOK AT VUE TO DO)
+
+{% endcomment %}
