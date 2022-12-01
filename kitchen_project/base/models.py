@@ -4,7 +4,7 @@ from users.models import CustomUser
 
 
 class Task(models.Model):
-  user = models.ForeignKey(CustomUser, related_name='task', on_delete=models.CASCADE)
+  user = models.ForeignKey(CustomUser, related_name='task', on_delete=models.CASCADE, null=True)
   shift_lists = (
     ('Opening', 'Opening'),
     ('Closing', 'Closing'),
@@ -65,7 +65,7 @@ class Inventory(models.Model):
     return self.name
 
 class Prep(models.Model):
-  user = models.ForeignKey(CustomUser, related_name='prep', on_delete=models.CASCADE)
+  user = models.ForeignKey(CustomUser, related_name='prep', on_delete=models.CASCADE, null=True)
   menu_headings = (
     ('Appetizers', 'Appetizers'),
     ('Entrees', 'Entrees'),
@@ -100,7 +100,7 @@ class Prep(models.Model):
     return self.name
 
 class Recipe(models.Model):
-  user = models.ForeignKey(CustomUser, related_name='recipe', on_delete=models.CASCADE)
+  user = models.ForeignKey(CustomUser, related_name='recipe', on_delete=models.CASCADE, null=True)
   menu_headings = (
     ('Appetizers', 'Appetizers'),
     ('Entrees', 'Entrees'),
@@ -131,17 +131,17 @@ class Recipe(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=69)
-    body = models.TextField(max_length=666)
-    user = models.ForeignKey(CustomUser, related_name='post', on_delete=models.CASCADE)
-    created = models.DateTimeField(auto_now_add=True)
-    edited = models.DateTimeField(null=True)
+  title = models.CharField(max_length=69)
+  body = models.TextField(max_length=666)
+  user = models.ForeignKey(CustomUser, related_name='post', on_delete=models.CASCADE)
+  created = models.DateTimeField(auto_now_add=True)
+  edited = models.DateTimeField(null=True)
 
-    def __str__(self):
-        return f'{self.title} - {self.created}'
+  def __str__(self):
+      return f'{self.title} - {self.created}'
 
-    class Meta:
-        ordering = ['-created']
+  class Meta:
+      ordering = ['-created']
 
-    def get_absolute_url(self):
-        return reverse('base:home', args=(self.pk,))
+  def get_absolute_url(self):
+      return reverse('base:home', args=(self.pk,))

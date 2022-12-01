@@ -12,9 +12,13 @@
       {% if task.shift == 'Opening' %}
     <p><input type="checkbox" id="{{ task.name }}" name="{{ task.name }}" value="{{ task.checked }}">
     <label for="{{ task.name }}">{{ task.name }}</label></p>
+        {% if task.checked == True %}
+        <span>{{ task.user }} @ {{ task.timestamp }}</span>
+        {% endif %}
       {% endif %}
     {% endfor %}
-    <button type='submit'>DONE</button><button type='submit'>CLEAR</button>
+    <button type='submit'>DONE</button>
+    <button type='submit'>CLEAR</button>
     {% comment %} if done, save somehow and add username and timestamp?  {% endcomment %}
     {% comment %} <p class='timestamp'>{{ task.user }} @ {{ task.updated }}</p> {% endcomment %}
   </div>

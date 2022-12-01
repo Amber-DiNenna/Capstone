@@ -6,6 +6,7 @@ from .models import Inventory
 from .models import Prep
 from .models import Recipe
 from .models import CustomUser
+from .models import Post
 
 # shifts = ['Opening', 'Mid', 'Closing']
 

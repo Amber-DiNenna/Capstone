@@ -8,9 +8,15 @@
 <div id='updates-container'>
   {% for update in updates %}
   <div class='update-div'>
-
-    {% comment %} how do i change the color of the update.type??? {% endcomment %}
-    <h2>{{ update.type }}</h2>
+    {% if update.type == 'OUT' %}
+    <h2 class='out'>{{ update.type }}</h2>
+    {% elif update.type == 'NEW' %}
+    <h2 class='new'>{{ update.type }}</h2>
+    {% elif update.type == 'CHANGE' %}
+    <h2 class='change'>{{ update.type }}</h2>
+    {% elif update.type == 'GONE' %}
+    <h2 class='gone'>{{ update.type }}</h2>
+    {% endif %}
     <h2>{{ update.subject }}</h2>
     <p>{{ update.description }}</p>
     {% comment %} <p>{{ update.user }}</p> {% endcomment %}

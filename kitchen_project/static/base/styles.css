@@ -110,6 +110,11 @@ hr {
   text-align: center;
 }
 
+.timestamp {
+  color: darkgrey;
+}
+
+/* WHITEBOARD ---------------------------------------- */
 #whiteboard {
   display: flex;
   align-items: center;
@@ -135,6 +140,7 @@ hr {
   font-size: .75rem;
 }
 
+/* UPDATES ---------------------------------------- */
 #updates-container {
   display: flex;
   flex-direction: column;
@@ -150,9 +156,6 @@ hr {
   padding: 1rem;
 }
 
-.timestamp {
-  color: darkgrey;
-}
 
 #recipe-book {
   display: flex;
@@ -161,6 +164,20 @@ hr {
   text-align: center;
 }
 
+.new {
+  color: green;
+}
+.out {
+  color: red;
+}
+.gone {
+  color: black;
+}
+.change {
+  color: blue;
+}
+
+/* CHECKLISTS ---------------------------------------- */
 #checklists-container {
   display: flex;
   flex-direction: column;
@@ -169,7 +186,11 @@ hr {
 }
 
 .checklist-div {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  /* text-align: center; */
 }
 
 /* TABLES ---------------------------------------- */
