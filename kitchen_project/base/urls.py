@@ -9,9 +9,9 @@ urlpatterns = [
     path('prep/', views.prep, name='prep'),
     path('whiteboard/', views.whiteboard, name='whiteboard'),
     path('recipes/', views.recipes, name='recipes'),
+    path('recipes/<str:pk>/', views.dish, name='dish'),
     path('checklist/', views.checklist, name='checklist'),
     path('checklist/opening/', views.opening, name='opening'),
     path('checklist/mid/', views.mid, name='mid'),
     path('checklist/closing/', views.closing, name='closing'),
-
 ]

@@ -54,6 +54,14 @@ def recipes(request):
     context = {'cards': cards}
     return render(request, 'recipes.html', context)
 
+def dish(request, pk):
+    recipe_number = Recipe.objects.get(id=pk)
+    recipe_number = str(recipe_number)
+    cards = Recipe.objects.all()
+    todos = Prep.objects.all()
+    context = {'recipe_number': recipe_number, 'cards': cards, 'todos': todos}
+    return render(request, 'card.html', context)
+
 def whiteboard(request):
     items = Inventory.objects.all()
     todos = Prep.objects.all()

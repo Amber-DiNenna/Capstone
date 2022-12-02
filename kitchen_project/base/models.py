@@ -67,10 +67,10 @@ class Inventory(models.Model):
 class Prep(models.Model):
   user = models.ForeignKey(CustomUser, related_name='prep', on_delete=models.CASCADE, null=True)
   menu_headings = (
-    ('Appetizers', 'Appetizers'),
-    ('Entrees', 'Entrees'),
-    ('Sides', 'Sides'),
-    ('Desserts', 'Desserts'),
+    ('APPETIZERS', 'APPETIZERS'),
+    ('ENTREES', 'ENTREES'),
+    ('SIDES', 'SIDES'),
+    ('DESSERTS', 'DESSERTS'),
   )
   heading = models.CharField(max_length=10, choices=menu_headings, blank=True)
   flag_choices = (
@@ -89,7 +89,7 @@ class Prep(models.Model):
   updated = models.DateTimeField(auto_now=True)
   created = models.DateTimeField(auto_now_add=True)
   in_use = models.BooleanField()
-  component_of = models.TextField()
+  component_of = models.TextField() # need to make this choices but choices need to be updated somehow whenever a new dish is added
   details = models.TextField(blank=True)
   # images =
 
@@ -102,15 +102,15 @@ class Prep(models.Model):
 class Recipe(models.Model):
   user = models.ForeignKey(CustomUser, related_name='recipe', on_delete=models.CASCADE, null=True)
   menu_headings = (
-    ('Appetizers', 'Appetizers'),
-    ('Entrees', 'Entrees'),
-    ('Sides', 'Sides'),
-    ('Desserts', 'Desserts'),
+    ('APPETIZERS', 'APPETIZERS'),
+    ('ENTREES', 'ENTREES'),
+    ('SIDES', 'SIDES'),
+    ('DESSERTS', 'DESSERTS'),
   )
   heading = models.CharField(max_length=10, choices=menu_headings)
   # how to list as a component of multiple headings?
   dish = models.CharField(max_length=200)
-  prep_tasks = models.TextField(blank=True)
+  prep_tasks = models.TextField(blank=True) # link this to component of from prep. should be an array or dict? manytomany?
   # prep_tasks = reference prep db?
   ingredients = models.TextField()
   directions = models.TextField()

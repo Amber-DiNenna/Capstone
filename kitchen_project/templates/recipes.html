@@ -9,7 +9,7 @@
     <h2>Appetizers</h2>
     {% for card in cards %}
       {% if card.heading == 'Appetizers' %}
-      <p><a>{{ card.dish }}</a></p>
+      <p><a href='/recipes/{{ card.id }}'>{{ card.dish }}</a></p>
       {% endif %}
     {% endfor %}
   </div>
@@ -18,7 +18,7 @@
     <h2>Entrees</h2>
     {% for card in cards %}
     {% if card.heading == 'Entrees' %}
-    <p><a>{{ card.dish }}</a></p>
+    <p><a href='/recipes/{{ card.id }}'>{{ card.dish }}</a></p>
     {% endif %}
     {% endfor %}
   </div>
@@ -27,7 +27,7 @@
     <h2 class='menu-section'>Sides</h2>
     {% for card in cards %}
       {% if card.heading == 'Sides' %}
-      <p><a>{{ card.dish }}</a></p>
+      <p><a href='/recipes/{{ card.id }}'>{{ card.dish }}</a></p>
       {% endif %}
     {% endfor %}
   </div>
@@ -36,7 +36,7 @@
     <h2 class='menu-section'>Desserts</h2>
     {% for card in cards %}
       {% if card.heading == 'Desserts' %}
-      <p><a>{{ card.dish }}</a></p>
+      <p><a href='/recipes/{{ card.id }}'>{{ card.dish }}</a></p>
       {% endif %}
     {% endfor %}
   </div>
