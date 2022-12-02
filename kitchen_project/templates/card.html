@@ -6,23 +6,24 @@
 {% comment %} <h2 class='h2-header'>{{ recipe_number }}</h2> {% endcomment %}
 
 
-<div class='recipe-card-container'>
+<div id='recipe-card-container'>
 {% for card in cards %}
   {% if recipe_number == card.dish %}
-  <h2 class='h2-header'>{{ card.heading|upper }}</h2>
-  <h2 class='recipe-card-title'>{{ card.dish }}</h2>
-  <div class='recipe-card'>
-    <p class='recipe-card-p'>Appx prep time needed:<span class='recipe-card-span'>{{ card.prep_time }}</span></p>
-    <p class='recipe-card-p'>Appx cooking time needed:<span class='recipe-card-span'> {{ card.cook_time }}</p>
-    <p class='recipe-card-p'>Yields: <span class='recipe-card-span'>{{ card.batch_size }}</p>
-    <p class='recipe-card-p'>Current par: <span class='recipe-card-span'>{{ card.par }}</p>
-    <p class='recipe-card-p'>Shelf life: <span class='recipe-card-span'>{{ card.shelf_life }}</p>
-    <p class='recipe-card-p'>Ingredients: <span class='recipe-card-span'>{{ card.ingredients }}</p>
-    <p class='recipe-card-p'>Directions: <span class='recipe-card-span'>{{ card.directions }}</p>
-    <p class='recipe-card-p'>Prep tasks: <a>{{ card.prep_tasks }}</a></p>
-    <p class='recipe-card-p'>Reference images: <a>{{ card.images }}<a/></p>
+    <a href='/recipes'><h2 class='h2-header'>{{ card.heading|upper }}</h2></a>
+    <div class='recipe-card'>
+      <h2 class='recipe-card-title'>{{ card.dish }}</h2>
 
-    <p>Last updated by: {{ card.user }} on {{ card.created }}</p>
+      <p class='recipe-card-p'>Appx prep time needed:<span class='recipe-card-span'>{{ card.prep_time }}</span></p>
+      <p class='recipe-card-p'>Appx cooking time needed:<span class='recipe-card-span'> {{ card.cook_time }}</span></p>
+      <p class='recipe-card-p'>Yields: <span class='recipe-card-span'>{{ card.batch_size }}</span></p>
+      <p class='recipe-card-p'>Current par: <span class='recipe-card-span'>{{ card.par }}</span></p>
+      <p class='recipe-card-p'>Shelf life: <span class='recipe-card-span'>{{ card.shelf_life }}</span></p>
+      <p class='recipe-card-p'>Ingredients: <span class='recipe-card-span'>{{ card.ingredients }}</span></p>
+      <p class='recipe-card-p'>Directions: <span class='recipe-card-span'>{{ card.directions }}</span></p>
+      <p class='recipe-card-p'>Prep tasks: <a>{{ card.prep_tasks }}</a></p>
+      <p class='recipe-card-p'>Reference images: <a>{{ card.images }}<a/></p>
+
+      <p class='update-stamp'>Last updated by: {{ card.user }} on {{ card.created }}</p>
   {% endif %}
 {% endfor %}
   </div>
@@ -30,36 +31,6 @@
 
 {% comment %}
 
-i guess whatever dish u click it'll be that name on the link name?
-
-capture the name of whatever gets clicked on? JS?
-
-class Recipe(models.Model):
-  user = models.ForeignKey(CustomUser, related_name='recipe', on_delete=models.CASCADE, null=True)
-  menu_headings = (
-    ('Appetizers', 'Appetizers'),
-    ('Entrees', 'Entrees'),
-    ('Sides', 'Sides'),
-    ('Desserts', 'Desserts'),
-  )
-  heading = models.CharField(max_length=10, choices=menu_headings)
-  # how to list as a component of multiple headings?
-  dish = models.CharField(max_length=200)
-  prep_tasks = models.TextField(blank=True) # link this to component of from prep. should be an array or dict? manytomany?
-  # prep_tasks = reference prep db?
-  ingredients = models.TextField()
-  directions = models.TextField()
-  prep_time = models.CharField(max_length=200)
-  cooking_time = models.CharField(max_length=200)
-  batch_size = models.CharField(max_length=200)
-  par = models.CharField(max_length=200, blank=True)
-  shelf_life = models.CharField(max_length=200, blank=True)
-  updated = models.DateTimeField(auto_now=True)
-  created = models.DateTimeField(auto_now_add=True)
-  in_use = models.BooleanField()
-  component_of = models.TextField(blank=True)
-  # images =
-  # component_of = HOW TO LINK TO RECIPE CARD? DROPDOWN WITH ALL MENU ITEMS? MAYBE MAKE A DISH CLASS AND LINK TO ALL? OR RECIPE?
 
 {% endcomment %}
 

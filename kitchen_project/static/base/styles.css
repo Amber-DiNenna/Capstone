@@ -212,21 +212,47 @@ header {
   text-align: center;
 }
 
+.menu-section a {
+  font-size: 1.5rem;
+}
+
+#recipe-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .recipe-card-title {
   font-size: 2.5rem;
   text-align: center;
-  padding-bottom: 2rem;
+  padding: 1rem;
+  padding-bottom: 1rem;
   color: darkslategray;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3rem;
+  border: 2px solid darkgray;
+  border-radius: .5rem;
+  padding: 1rem;
+  background-color:rgb(250, 235, 215, .5);
+  max-width: 40rem;
 }
 
 .recipe-card-p {
   font-weight: bolder;
   font-size: 1.5rem;
   color: peru;
+
 }
 
 .recipe-card-span {
   color: darkslategray;
+}
+
+.update-stamp {
+  text-align: center;
 }
 
 /* CHECKLISTS ---------------------------------------- */

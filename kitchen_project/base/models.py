@@ -67,10 +67,10 @@ class Inventory(models.Model):
 class Prep(models.Model):
   user = models.ForeignKey(CustomUser, related_name='prep', on_delete=models.CASCADE, null=True)
   menu_headings = (
-    ('APPETIZERS', 'APPETIZERS'),
-    ('ENTREES', 'ENTREES'),
-    ('SIDES', 'SIDES'),
-    ('DESSERTS', 'DESSERTS'),
+    ('Appetizers', 'Appetizers'),
+    ('Entrees', 'Entrees'),
+    ('Sides', 'Sides'),
+    ('Desserts', 'Desserts'),
   )
   heading = models.CharField(max_length=10, choices=menu_headings, blank=True)
   flag_choices = (
@@ -102,10 +102,10 @@ class Prep(models.Model):
 class Recipe(models.Model):
   user = models.ForeignKey(CustomUser, related_name='recipe', on_delete=models.CASCADE, null=True)
   menu_headings = (
-    ('APPETIZERS', 'APPETIZERS'),
-    ('ENTREES', 'ENTREES'),
-    ('SIDES', 'SIDES'),
-    ('DESSERTS', 'DESSERTS'),
+    ('Appetizers', 'Appetizers'),
+    ('Entrees', 'Entrees'),
+    ('Sides', 'Sides'),
+    ('Desserts', 'Desserts'),
   )
   heading = models.CharField(max_length=10, choices=menu_headings)
   # how to list as a component of multiple headings?
