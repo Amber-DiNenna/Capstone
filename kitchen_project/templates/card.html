@@ -2,10 +2,6 @@
 {% load static %}
 {% block content %}
 
-
-{% comment %} <h2 class='h2-header'>{{ recipe_number }}</h2> {% endcomment %}
-
-
 <div id='recipe-card-container'>
 {% for card in cards %}
   {% if recipe_number == card.dish %}
@@ -28,13 +24,5 @@
 {% endfor %}
   </div>
 </div>
-
-{% comment %}
-
-
-{% endcomment %}
-
-
-
 
 {% endblock content %}

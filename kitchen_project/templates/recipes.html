@@ -17,14 +17,14 @@
   <div class='menu-section'>
     <h2>Entrees</h2>
     {% for card in cards %}
-    {% if card.heading == 'Entrees' %}
-    <p><a href='/recipes/{{ card.id }}'>{{ card.dish }}</a></p>
-    {% endif %}
+      {% if card.heading == 'Entrees' %}
+      <p><a href='/recipes/{{ card.id }}'>{{ card.dish }}</a></p>
+      {% endif %}
     {% endfor %}
   </div>
 
-  <div>
-    <h2 class='menu-section'>Sides</h2>
+  <div class='menu-section'>
+    <h2>Sides</h2>
     {% for card in cards %}
       {% if card.heading == 'Sides' %}
       <p><a href='/recipes/{{ card.id }}'>{{ card.dish }}</a></p>
@@ -32,8 +32,8 @@
     {% endfor %}
   </div>
 
-  <div>
-    <h2 class='menu-section'>Desserts</h2>
+  <div class='menu-section'>
+    <h2>Desserts</h2>
     {% for card in cards %}
       {% if card.heading == 'Desserts' %}
       <p><a href='/recipes/{{ card.id }}'>{{ card.dish }}</a></p>

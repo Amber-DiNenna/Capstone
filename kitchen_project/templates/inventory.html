@@ -5,30 +5,32 @@
 
 <h2 class='h2-header'>INVENTORY SHEET</h2>
 
-<div>
-  <div id='table-div'>
+{% comment %} <div> {% endcomment %}
+  <div class='table-div'>
     <table>
       <tr id='table-headers'>
-        <th>STORAGE AREA &#8593; &#8595;</th>
-        <th>ITEM  &#8593; &#8595;</th>
-        <th>PAR &#8593; &#8595;</th>
-        <th>ON HAND &#8593; &#8595;</th>
-        <th>TO WHITEBOARD</th>
+        <th><button>&#8593;</button><br>STORAGE<br><button>&#8595;</button></th>
+        <th><button>&#8593;</button><br>ITEM<br><button>&#8595;</button></th>
+        <th>PAR</th>
+        <th>ON HAND</th>
+        <th>NEED</th>
+        <th>WHITEBOARD</th>
       </tr>
       {% for item in items %}
       <tr class='table-row'>
         <td>{{ item.located }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.par }}</td>
-        <td><input value='{{ item.on_hand }}' placeholder='Enter amount on hand'></input></td>
+        <td><input class='table-input' value='{{ item.on_hand }}' placeholder='Enter amount on hand'></input></td>
+        <td><input class='table-input' value='{{ item.need }}' placeholder='Enter amount to order'></input></td>
         <td><button value='{{ item.to_whiteboard }}'>ADD</button></td>
       </tr>
       {% endfor %}
     </table>
 
   </div>
-  <br><br>
 
-</div>
+
+{% comment %} </div> {% endcomment %}
 
 {% endblock content %}

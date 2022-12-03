@@ -4,30 +4,31 @@
 
 <h2 class='h2-header'>MAIN PREP LIST</h2>
 
-<div>
-  <div>
+{% comment %} <div> {% endcomment %}
+  <div class='table-div'>
     <table>
       <tr>
-        <th>Component Of  &#8593; &#8595;</th>
-        <th>Prep Task &#8593; &#8595;</th>
-        <th>Par &#8593; &#8595;</th>
-        <th>On Hand &#8593; &#8595;</th>
-        <th>TO WHITEBOARD</th>
+        <th><button>&#8593;</button><br>FOR<br><button>&#8595;</button></th>
+        <th>PREP TASK</th>
+        <th>PAR</th>
+        <th>ON HAND</th>
+        <th>NEED</th>
+        <th>WHITEBOARD</th>
       </tr>
       {% for todo in todos %}
       <tr>
         <td>{{ todo.component_of }}</td>
         <td>{{ todo.name }}</td>
         <td>{{ todo.par }}</td>
-        <td><input value='{{ todo.on_hand }}' placeholder='Enter amount on hand'></input></td>
+        <td><input class='table-input' value='{{ todo.on_hand }}' placeholder='Enter amount on hand'></input></td>
+        <td><input class='table-input' value='{{ todo.need }}' placeholder='Enter amount needed'></input></td>
         <td><button value='{{ todo.to_whiteboard }}'>ADD</button></td>
       </tr>
       {% endfor %}
     </table>
-
   </div>
-  <br><br>
 
-</div>
+
+{% comment %} </div> {% endcomment %}
 
 {% endblock content %}
