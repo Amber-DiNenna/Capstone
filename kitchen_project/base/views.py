@@ -1,19 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Task
-from .models import Update
-from .models import Inventory
-from .models import Prep
-from .models import Recipe
-from .models import Post
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.http import HttpResponseRedirect
+from .models import Task, Update, Inventory, Prep, Recipe, Post
 from users.models import CustomUser
-
-
-# shifts = ['Opening', 'Mid', 'Closing']
+from .forms import UpdateForm
 
 def home(request):
     users = CustomUser.objects.all()
-    context = {'users': users}
+    updates = Update.objects.all()
+    context = {'users': users, 'updates': updates}
     return render(request, 'home.html', context)
 
 def checklist(request):
@@ -39,8 +34,32 @@ def closing(request):
 
 def changes(request):
     updates = Update.objects.all()
-    context = {'updates': updates}
+    form = UpdateForm()
+
+    if request.method == 'POST':
+        # print(request.POST)
+        form = UpdateForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/changes')
+
+    context = {'updates': updates, 'form': form}
     return render(request, 'changes.html', context)
+
+def createUpdate(request):
+    updates = Update.objects.all()
+    form = UpdateForm()
+
+    if request.method == 'POST':
+        # print(request.POST)
+        form = UpdateForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/changes')
+
+
+    context = {'updates': updates, 'form': form}
+    return render(request, 'update_form.html', context)
 
 def inventory(request):
     items = Inventory.objects.all()

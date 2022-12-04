@@ -33,8 +33,27 @@ class Update(models.Model):
   updated = models.DateTimeField(auto_now=True)
   created = models.DateTimeField(auto_now_add=True)
 
+  class Meta:
+    ordering = ['-updated', '-created']
+
   def __str__(self):
     return self.subject
+
+class Post(models.Model):
+  title = models.CharField(max_length=69)
+  body = models.TextField(max_length=666)
+  user = models.ForeignKey(CustomUser, related_name='post', on_delete=models.CASCADE)
+  created = models.DateTimeField(auto_now_add=True)
+  edited = models.DateTimeField(null=True)
+
+  def __str__(self):
+    return f'{self.title} - {self.created}'
+
+  class Meta:
+    ordering = ['-created']
+
+  def get_absolute_url(self):
+    return reverse('base:home', args=(self.pk,))
 
 class Inventory(models.Model):
   user = models.ForeignKey(CustomUser, related_name='inventory', on_delete=models.SET_NULL, null=True)
@@ -97,6 +116,9 @@ class Prep(models.Model):
   # component_of = reference recipe card?
   # HOW TO LINK TO RECIPE CARD? DROPDOWN WITH ALL MENU ITEMS? MAYBE MAKE A DISH CLASS AND LINK TO ALL? OR RECIPE? OR MAKE MENU HEADINGS/MENU ITEMS DICTIONARIES IN GLOBAL SCOPE AND REFERENCE THEM IN EACH CLASS?
 
+  # class Meta:
+  #   ordering = ['heading']
+
   def __str__(self):
     return self.name
 
@@ -129,20 +151,3 @@ class Recipe(models.Model):
 
   def __str__(self):
     return self.dish
-
-
-class Post(models.Model):
-  title = models.CharField(max_length=69)
-  body = models.TextField(max_length=666)
-  user = models.ForeignKey(CustomUser, related_name='post', on_delete=models.CASCADE)
-  created = models.DateTimeField(auto_now_add=True)
-  edited = models.DateTimeField(null=True)
-
-  def __str__(self):
-      return f'{self.title} - {self.created}'
-
-  class Meta:
-      ordering = ['-created']
-
-  def get_absolute_url(self):
-      return reverse('base:home', args=(self.pk,))

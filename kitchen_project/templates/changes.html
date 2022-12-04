@@ -3,9 +3,20 @@
 {% block content %}
 
 <h2 class='h2-header'>UPDATES FEED</h2>
+{% comment %} <h3><a href="create-update/">Add an Update</a></h3> {% endcomment %}
 
+<div class='update-form'>
+
+  <form method="POST" action="">
+    <h3 class='update-form-header'>Add an Update</h3>
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit" value="Submit Update"/>
+  </form>
+</div>
 
 <div id='updates-container'>
+
   {% for update in updates %}
   <div class='update-div'>
     {% if update.type == 'OUT' %}
