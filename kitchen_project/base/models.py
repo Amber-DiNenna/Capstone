@@ -4,7 +4,7 @@ from users.models import CustomUser
 
 
 class Task(models.Model):
-  user = models.ForeignKey(CustomUser, related_name='task', on_delete=models.CASCADE, null=True)
+  user = models.ForeignKey(CustomUser, related_name='task', on_delete=models.SET_NULL, null=True)
   shift_lists = (
     ('Opening', 'Opening'),
     ('Closing', 'Closing'),
@@ -20,7 +20,7 @@ class Task(models.Model):
     return self.name
 
 class Update(models.Model):
-  user = models.ForeignKey(CustomUser, related_name='update', on_delete=models.CASCADE)
+  user = models.ForeignKey(CustomUser, related_name='update', on_delete=models.SET_NULL, null=True)
   update_types = (
     ('NEW', 'NEW'),
     ('OUT', 'OUT'),
@@ -37,7 +37,7 @@ class Update(models.Model):
     return self.subject
 
 class Inventory(models.Model):
-  user = models.ForeignKey(CustomUser, related_name='inventory', on_delete=models.CASCADE, null=True)
+  user = models.ForeignKey(CustomUser, related_name='inventory', on_delete=models.SET_NULL, null=True)
   storage_locations = (
     ('Dry', 'Dry'),
     ('Frozen', 'Frozen'),
@@ -65,7 +65,7 @@ class Inventory(models.Model):
     return self.name
 
 class Prep(models.Model):
-  user = models.ForeignKey(CustomUser, related_name='prep', on_delete=models.CASCADE, null=True)
+  user = models.ForeignKey(CustomUser, related_name='prep', on_delete=models.SET_NULL, null=True)
   menu_headings = (
     ('Appetizers', 'Appetizers'),
     ('Entrees', 'Entrees'),
@@ -92,6 +92,7 @@ class Prep(models.Model):
   component_of = models.TextField() # need to make this choices but choices need to be updated somehow whenever a new dish is added
   details = models.TextField(blank=True)
   # images =
+  # recipe = models.ForeignKey(Recipe, on_delete=models.SET_NULL, null=True)
 
   # component_of = reference recipe card?
   # HOW TO LINK TO RECIPE CARD? DROPDOWN WITH ALL MENU ITEMS? MAYBE MAKE A DISH CLASS AND LINK TO ALL? OR RECIPE? OR MAKE MENU HEADINGS/MENU ITEMS DICTIONARIES IN GLOBAL SCOPE AND REFERENCE THEM IN EACH CLASS?

@@ -5,13 +5,16 @@ from .models import Update
 from .models import Inventory
 from .models import Prep
 from .models import Recipe
-from .models import CustomUser
 from .models import Post
+from users.models import CustomUser
+
 
 # shifts = ['Opening', 'Mid', 'Closing']
 
 def home(request):
-    return render(request, 'home.html')
+    users = CustomUser.objects.all()
+    context = {'users': users}
+    return render(request, 'home.html', context)
 
 def checklist(request):
     # tasks = Task.objects.all()
@@ -41,6 +44,7 @@ def changes(request):
 
 def inventory(request):
     items = Inventory.objects.all()
+    # sort_by_location = Inventory.object.filter(title='located').order_by('Dry', 'Frozen', 'Lowboy', 'Walkin')
     context = {'items': items}
     return render(request, 'inventory.html', context)
 
