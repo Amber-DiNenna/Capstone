@@ -3,33 +3,43 @@
 {% block content %}
 
 {% for user in users%}
-  <h2 class='h2-header'>Welcome, {{ user.first_name }}!</h2>
+  <h2 class='h2-header'>WELCOME, {{ user.first_name|upper }}!</h2>
 {% endfor %}
 
-<div id='main-menu-div'>
-  <a href='changes/'>
-    <h3>UPDATES FEED</h3>
-  </a>
+<div id='home-container'>
 
-  <a href='whiteboard/'>
-    <h3>WHITEBOARD</h3>
-  </a>
+  <div id='home-left'>
+    <div id='main-menu-div'>
+      <a href='changes/'>
+        <h3>UPDATES FEED</h3>
+      </a>
 
-  <a href='checklist/'>
-    <h3>CHECKLISTS</h3>
-  </a>
+      <a href='whiteboard/'>
+        <h3>WHITEBOARD</h3>
+      </a>
 
-  <a href='recipes/'>
-    <h3>RECIPE BOOK</h3>
-  </a>
+      <a href='checklist/'>
+        <h3>CHECKLISTS</h3>
+      </a>
 
-  <a href='prep/'>
-    <h3>PREP LIST</h3>
-  </a>
+      <a href='recipes/'>
+        <h3>RECIPE BOOK</h3>
+      </a>
 
-  <a href='inventory/'>
-    <h3>INVENTORY SHEET</h3>
-  </a>
+      <a href='prep/'>
+        <h3>PREP LIST</h3>
+      </a>
+
+      <a href='inventory/'>
+        <h3>INVENTORY SHEET</h3>
+      </a>
+    </div>
+  </div>
+
+  <div id='home-right'>
+
+  </div>
+
 </div>
 
 {% comment %} <main>

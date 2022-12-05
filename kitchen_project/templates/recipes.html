@@ -3,6 +3,9 @@
 {% block content %}
 
 <h2 class='h2-header'>RECIPE BOOK</h2>
+<form method="GET" action="/recipes/{{ card.id }}">
+  <input type="text" name="q" placeholder="Search recipes"/>
+</form>
 
 <div id='recipe-book'>
   <div class='menu-section'>

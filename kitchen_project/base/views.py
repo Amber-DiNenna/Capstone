@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from .models import Task, Update, Inventory, Prep, Recipe, Post
 from users.models import CustomUser
@@ -93,8 +93,16 @@ def prep(request):
     return render(request, 'prep.html', context)
 
 def recipes(request):
-    cards = Recipe.objects.all()
-    context = {'cards': cards}
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+
+    cards = Recipe.objects.filter(
+        Q(prep_tasks__icontains=q) |
+        Q(heading__icontains=q) |
+        Q(dish__icontains=q)
+    )
+    # cards = Recipe.objects.all()
+    todos = Prep.objects.all()
+    context = {'cards': cards, 'todos': todos}
     return render(request, 'recipes.html', context)
 
 def dish(request, pk):

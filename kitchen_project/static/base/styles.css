@@ -17,7 +17,7 @@ font-family: 'Thasadith', sans-serif; (tight thin normal)*/
   padding: 0;
   box-sizing: border-box;
   margin: 1rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -73,12 +73,14 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 8rem;
+  margin: 0;
 }
 
 #micro-logo {
   font-size: 3.5rem;
   color:darkslategray;
   font-family: 'Megrim', cursive;
+  margin: 0;
 }
 
 #sharpie {
@@ -133,12 +135,23 @@ header {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 /* .dropdown:hover .dropbtn {border-bottom: 2px solid darkgray;} */
-/* ^^^ NAV BAR------------------------------------------- ^^^ */
+
+/* HOME ---------------------------------------------- */
+#home-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin: 0;
+}
+
+#home-left, #home-right {
+  margin: 0;
+}
 
 #main-menu-div {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 0;
 }
 
 .timestamp {
