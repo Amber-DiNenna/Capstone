@@ -33,7 +33,7 @@
     <h2>{{ update.subject }}</h2>
     <p>{{ update.description }}</p>
     <a href="update-update/{{ update.id }}">EDIT</a>
-    {% comment %} <p>{{ update.user }}</p> {% endcomment %}
+    <a href="delete-update/{{ update.id }}">DELETE</a>
     <p class='timestamp'>{{ update.user }} @ {{ update.created }}</p>
   </div>
   <br>

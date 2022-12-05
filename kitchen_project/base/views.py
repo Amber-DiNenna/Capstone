@@ -74,6 +74,13 @@ def updateUpdate(request, pk):
     context = {'form': form}
     return render(request, 'update_form.html', context)
 
+def deleteUpdate(request, pk):
+    update = Update.objects.get(id=pk)
+    if request.method == 'POST':
+        update.delete()
+        return redirect('/changes')
+    return render(request, 'delete.html', {'obj':update})
+
 def inventory(request):
     items = Inventory.objects.all()
     # sort_by_location = Inventory.object.filter(title='located').order_by('Dry', 'Frozen', 'Lowboy', 'Walkin')
