@@ -64,6 +64,13 @@ def createUpdate(request):
 def updateUpdate(request, pk):
     update = Update.objects.get(id=pk)
     form = UpdateForm(instance=update)
+
+    if request.method == 'POST':
+        form = UpdateForm(request.POST, instance=update)
+        if form.is_valid():
+            form.save()
+            return redirect('/changes')
+
     context = {'form': form}
     return render(request, 'update_form.html', context)
 
