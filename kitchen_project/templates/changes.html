@@ -3,20 +3,22 @@
 {% block content %}
 
 <h2 class='h2-header'>UPDATES FEED</h2>
-{% comment %} <h3><a href="create-update/">Add an Update</a></h3> {% endcomment %}
 
-<div class='update-form'>
 
+{% comment %} <div class='update-form'>
+  <h3 class='update-form-header'>Add an Update</h3>
   <form method="POST" action="">
-    <h3 class='update-form-header'>Add an Update</h3>
+
       {% csrf_token %}
       {{ form }}
       <input type="submit" value="Submit Update"/>
   </form>
-</div>
+</div> {% endcomment %}
 
 <div id='updates-container'>
-
+  <h3 class='update-form-header'>
+    <a href="create-update/">Add an Update</a>
+  </h3>
   {% for update in updates %}
   <div class='update-div'>
     {% if update.type == 'OUT' %}
@@ -30,6 +32,7 @@
     {% endif %}
     <h2>{{ update.subject }}</h2>
     <p>{{ update.description }}</p>
+    <a href="update-update/{{ update.id }}">EDIT</a>
     {% comment %} <p>{{ update.user }}</p> {% endcomment %}
     <p class='timestamp'>{{ update.user }} @ {{ update.created }}</p>
   </div>

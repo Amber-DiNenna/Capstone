@@ -17,7 +17,7 @@ font-family: 'Thasadith', sans-serif; (tight thin normal)*/
   padding: 0;
   box-sizing: border-box;
   margin: 1rem;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 body {
@@ -170,10 +170,6 @@ header {
 }
 
 /* UPDATES ---------------------------------------- */
-form {
-  height: 10rem;
-}
-
 #updates-container {
   display: flex;
   flex-direction: column;
@@ -319,4 +315,9 @@ tr:nth-child(even) {
   width: 75%;
 }
 
-/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+/* FORMS ---------------------------------------- */
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

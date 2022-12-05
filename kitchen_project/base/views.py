@@ -61,6 +61,12 @@ def createUpdate(request):
     context = {'updates': updates, 'form': form}
     return render(request, 'update_form.html', context)
 
+def updateUpdate(request, pk):
+    update = Update.objects.get(id=pk)
+    form = UpdateForm(instance=update)
+    context = {'form': form}
+    return render(request, 'update_form.html', context)
+
 def inventory(request):
     items = Inventory.objects.all()
     # sort_by_location = Inventory.object.filter(title='located').order_by('Dry', 'Frozen', 'Lowboy', 'Walkin')

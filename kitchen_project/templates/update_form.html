@@ -2,13 +2,15 @@
 {% load static %}
 {% block content %}
 
-<h3>Add an Update</h3>
-<div class='update-form'>
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit"/>
-    </form>
+<div class='form-container'>
+    <h3>Add an Update</h3>
+    <div class='update-form'>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
 </div>
 
 {% endblock content %}
