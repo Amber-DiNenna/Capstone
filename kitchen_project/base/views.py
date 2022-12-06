@@ -9,33 +9,34 @@ from .models import Task, Update, Inventory, Prep, Recipe, Post
 from .forms import UpdateForm
 
 
-def loginPage(request):
+# def loginPage(request):
 
-  if request.method == 'POST':
-    username = request.POST.get('username')
-    password = request.POST.get('password')
+#     # if request.user.is_authenticated:
+#     #     return redirect('/')
 
-    try:
-      user = CustomUser.objects.get(username=username)
-    except:
-      messages.error(request, 'Username does not exist.')
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
 
-    user = authenticate(request, username=username, password=password)
+#     try:
+#         user = CustomUser.objects.get(username=username)
+#     except:
+#         messages.error(request, 'Username does not exist.')
 
-    if user is not None:
-      login(request, user)
-      return redirect('/')
-    else:
-      messages.error(request, 'Username or password does not exist.')
+#     user = authenticate(request, username=username, password=password)
 
+#     if user is not None:
+#         login(request, user)
+#         return redirect('/')
+#     else:
+#         messages.error(request, 'Username or password does not exist.')
 
-  context = {}
-  return render(request, 'registration/login.html', context)
+#     context = {}
+#     return render(request, 'registration/login.html', context)
 
-
-def logoutUser(request):
-  logout(request)
-  return redirect('/login')
+# def logoutUser(request):
+#     logout(request)
+#     return redirect('/login')
 
 def home(request):
     users = CustomUser.objects.all()
