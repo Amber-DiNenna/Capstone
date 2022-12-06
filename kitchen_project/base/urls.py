@@ -3,6 +3,8 @@ from . import views
 
 app_name = 'base'
 urlpatterns = [
+    path('registration/login/', views.loginPage, name='login'),
+    path('registration/login/', views.logoutUser, name='logout'),
     path('', views.home, name='home'),
     path('changes/', views.changes, name='changes'),
     path('changes/create-update/', views.createUpdate, name='create-update'),

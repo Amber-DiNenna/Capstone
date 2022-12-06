@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
     'users.apps.UsersConfig',
+    # 'django.contrib.auth.urls',
     # 'inventory_sheet.apps.InventorySheetConfig',
     # 'prep_list.apps.PrepListConfig',
     # 'updates_blog.apps.UpdatesBlogConfig',

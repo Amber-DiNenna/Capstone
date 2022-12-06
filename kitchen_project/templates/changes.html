@@ -32,8 +32,10 @@
     {% endif %}
     <h2>{{ update.subject }}</h2>
     <p>{{ update.description }}</p>
+    {% if request.user == update.user %}
     <a href="update-update/{{ update.id }}">EDIT</a>
     <a href="delete-update/{{ update.id }}">DELETE</a>
+    {% endif %}
     <p class='timestamp'>{{ update.user }} @ {{ update.created }}</p>
   </div>
   <br>

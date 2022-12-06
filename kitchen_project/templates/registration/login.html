@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
+{% comment %} {% if request.user.is_authenticated == False %} {% endcomment %}
 
 <div>
     <form method="POST" action="">
@@ -16,4 +17,5 @@
     </form>
 </div>
 
+{% comment %} {% endif %} {% endcomment %}
 {% endblock content %}
