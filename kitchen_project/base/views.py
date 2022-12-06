@@ -8,36 +8,6 @@ from django.http import HttpResponseRedirect
 from .models import Task, Update, Inventory, Prep, Recipe, Post
 from .forms import UpdateForm
 
-
-# def loginPage(request):
-
-#     # if request.user.is_authenticated:
-#     #     return redirect('/')
-
-#     if request.method == 'POST':
-#         username = request.POST.get('username')
-#         password = request.POST.get('password')
-
-#     try:
-#         user = CustomUser.objects.get(username=username)
-#     except:
-#         messages.error(request, 'Username does not exist.')
-
-#     user = authenticate(request, username=username, password=password)
-
-#     if user is not None:
-#         login(request, user)
-#         return redirect('/')
-#     else:
-#         messages.error(request, 'Username or password does not exist.')
-
-#     context = {}
-#     return render(request, 'registration/login.html', context)
-
-# def logoutUser(request):
-#     logout(request)
-#     return redirect('/login')
-
 def home(request):
     users = CustomUser.objects.all()
     updates = Update.objects.all()
@@ -151,3 +121,56 @@ def whiteboard(request):
     todos = Prep.objects.all()
     context = {'items': items, 'todos': todos}
     return render(request, 'whiteboard.html', context)
+
+def HomeRegister(request):
+    # example of password requirements
+    if len(request.POST['password']) < 8:
+        return redirect('base:home')
+
+    if request.POST['password2'] == request.POST['password']:
+        # print('password', request.POST['password'])
+        # print('hashed password', make_password(request.POST['password']))
+
+        user_model = CustomUser(username=request.POST['name'], password=(request.POST['password']))
+        user_model.save()
+    else:
+        print("not match")
+
+    return redirect('base:home')
+
+
+
+
+
+
+
+
+
+# def loginPage(request):
+
+#     # if request.user.is_authenticated:
+#     #     return redirect('/')
+
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+
+#     try:
+#         user = CustomUser.objects.get(username=username)
+#     except:
+#         messages.error(request, 'Username does not exist.')
+
+#     user = authenticate(request, username=username, password=password)
+
+#     if user is not None:
+#         login(request, user)
+#         return redirect('/')
+#     else:
+#         messages.error(request, 'Username or password does not exist.')
+
+#     context = {}
+#     return render(request, 'registration/login.html', context)
+
+# def logoutUser(request):
+#     logout(request)
+#     return redirect('/login')

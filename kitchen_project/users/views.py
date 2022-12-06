@@ -12,32 +12,41 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
-def loginPage(request):
+# def loginPage(request):
+#   page = 'login'
+#   if request.user.is_authenticated:
+#     return redirect('/')
 
-  if request.method == 'POST':
-    username = request.POST.get('username')
-    password = request.POST.get('password')
+#   if request.method == 'POST':
+#     username = request.POST.get('username')
+#     password = request.POST.get('password')
 
-    try:
-      user = CustomUser.objects.get(username=username)
-    except:
-      messages.error(request, 'Username does not exist.')
+#     try:
+#       user = CustomUser.objects.get(username=username)
+#     except:
+#       messages.error(request, 'Username does not exist.')
 
-    user = authenticate(request, username=username, password=password)
+#     user = authenticate(request, username=username, password=password)
 
-    if user is not None:
-      login(request, user)
-      return redirect('/')
-    else:
-      messages.error(request, 'Username or password does not exist.')
+#     if user != None:
+#       login(request, user)
+#       return redirect('/')
+#     else:
+#       messages.error(request, 'Username or password does not exist.')
 
 
-  context = {}
-  return render(request, 'users/registration/login.html', context)
+#   context = {'page': page}
+#   return render(request, 'users/registration/login.html', context)
 
-def logoutUser(request):
-  logout(request)
-  return redirect('/login')
+# def logoutUser(request):
+#   logout(request)
+#   return redirect('login')
+
+# def registerPage(request):
+#   page = 'register'
+#   context = {'page': page}
+#   return render(request, 'users/registration/login.html', context)
+
 
 class SignUpView(CreateView):
   form_class = CustomUserCreationForm
