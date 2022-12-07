@@ -17,7 +17,7 @@ font-family: 'Thasadith', sans-serif; (tight thin normal)*/
   padding: 0;
   box-sizing: border-box;
   margin: 1rem;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 body {
@@ -49,16 +49,17 @@ h2 {
 
 h3 {
   font-size: 2rem;
+  text-align: center;
 }
 
 .h3-header {
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 2rem;
+  color:peru;
 }
 
 button {
-
   background-color: darkgray;
   color: white;
   font-family: 'Raleway', sans-serif;
@@ -139,9 +140,6 @@ header {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-/* .dropdown:hover .dropbtn {border-bottom: 2px solid darkgray;} */
-
 /* HOME ---------------------------------------------- */
 #home-container {
   display: grid;
@@ -174,19 +172,50 @@ header {
 }
 
 #needs, #todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
   border: 2px solid darkgray;
   width: 50%;
   height: 40rem;
   background-color:aliceblue;
+  padding: 1rem;
 }
 
 .babe-writing {
+  width: 100%;
   font-family: 'Rock Salt', cursive;
   font-size: 1rem;
   text-align: left;
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
   font-weight: 100;
+  padding: 0;
+  margin: 0;
 }
+/*
+.board-buttons-p {
+  margin: 0;
+}
+
+.board-column-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.board-column-left {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.board-column-right {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+} */
 
 /* UPDATES ---------------------------------------- */
 #updates-container {
@@ -250,7 +279,8 @@ header {
   border-radius: .5rem;
   padding: 1rem;
   background-color:rgb(250, 235, 215, .5);
-  max-width: 40rem;
+  /* max-width: 40rem; */
+  width: 75%;
 }
 
 /* .recipe-card-a {
@@ -269,8 +299,19 @@ header {
   color: darkslategray;
 }
 
-.update-stamp {
+.recipe-card-li {
+  color: darkslategray;
+  list-style: none;
+}
+
+.stamp {
   text-align: center;
+  color: darkgrey;
+  padding-top: 1rem;
+}
+
+#back {
+  display: none;
 }
 
 /* CHECKLISTS ---------------------------------------- */

@@ -4,11 +4,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <script src="{% static '/app.js' %}" defer></script>
     <link rel="stylesheet" href="{% static 'base/styles.css' %}">
     <title>MicroMan Kitchen Manager</title>
   </head>
   <body>
-    <div id='app'>
+    {% comment %} <div id='app'> {% endcomment %}
       {% include 'navbar.html' %}
 
 
@@ -17,12 +18,12 @@
 
       {% endblock %}
 
-    </div>
+    {% comment %} </div>
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- Import file.js -->
     <script src="{% static '/app.js' %}"></script>
-    <script> const mountApp = app.mount('#app')</script>
+    <script> const mountApp = app.mount('#app')</script> {% endcomment %}
   </body>
 </html>

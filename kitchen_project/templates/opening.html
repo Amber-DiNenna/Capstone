@@ -8,6 +8,7 @@
 <div id='checklists-container'>
   <div class='checklist-div'>
     <h2>OPENING</h2>
+
     {% for task in tasks %}
       {% if task.shift == 'Opening' %}
     <p><input type="checkbox" id="{{ task.name }}" name="{{ task.name }}" value="{{ task.checked }}">
@@ -17,11 +18,18 @@
         {% endif %}
       {% endif %}
     {% endfor %}
+
     <button type='submit'>DONE</button>
     <button type='submit'>CLEAR</button>
-    {% comment %} if done, save somehow and add username and timestamp?  {% endcomment %}
-    {% comment %} <p class='timestamp'>{{ task.user }} @ {{ task.updated }}</p> {% endcomment %}
+
   </div>
 </div>
 
 {% endblock content %}
+
+
+<form action="/checklist/opening/" method="POST">
+  {% csrf_token %}
+  {{ form }}
+  <input type='checkbox'>
+</form>

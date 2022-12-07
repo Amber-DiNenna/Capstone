@@ -3,10 +3,14 @@
 {% block content %}
 
 <div id='recipe-card-container'>
+
 {% for card in cards %}
   {% if recipe_number == card.dish %}
+
     <a href='/recipes'><h2 class='h2-header'>{{ card.heading|upper }}</h2></a>
-    <div class='recipe-card'>
+
+    <div class='recipe-card' id='front'>
+
       <h2 class='recipe-card-title'>{{ card.dish }}</h2>
 
       <p class='recipe-card-p'>Appx prep time needed:<span class='recipe-card-span'>{{ card.prep_time }}</span></p>
@@ -16,12 +20,35 @@
       <p class='recipe-card-p'>Shelf life: <span class='recipe-card-span'>{{ card.shelf_life }}</span></p>
       <p class='recipe-card-p'>Ingredients: <span class='recipe-card-span'>{{ card.ingredients }}</span></p>
       <p class='recipe-card-p'>Directions: <span class='recipe-card-span'>{{ card.directions }}</span></p>
-      <p class='recipe-card-p'>Reference images: <a>{{ card.images }}<a/></p>
+      <p class='recipe-card-p'>Reference images:</p>
 
 
-      <p class='update-stamp'>Last updated by: {{ card.user }} on {{ card.created }}</p>
+      <p class='stamp'>Last updated by: {{ card.user }} on {{ card.created }}</p>
 
-      <h3 class='h3-header'>CLICK HERE TO VIEW PREP LIST</h3>
+      <a class='h3-header' id='front-btn'>CLICK HERE TO VIEW PREP TASKS</a>
+
+    </div>
+
+    <div class='recipe-card' id='back'>
+
+      <h2 class='recipe-card-title'>{{ card.dish }}</h2>
+
+      <ul class='recipe-card-p'>Prep Tasks:
+      {% for recipe_task in recipe_tasks %}
+        {% comment %} {% if recipe_task.recipe == card.dish %} {% endcomment %}
+          {% comment %} <li class='recipe-card-li'>{{ recipe_task.recipe }}{{ card.dish }}</li> {% endcomment %}
+          <li class='recipe-card-li'>{{ recipe_task.prep }}</li>
+        {% comment %} {% endif %} {% endcomment %}
+      {% endfor %}
+      </ul>
+
+      <button>ADD TASKS TO WHITEBOARD</button>
+
+      <p class='stamp'>Last updated by: {{ card.user }} on {{ card.created }}</p>
+
+      <a class='h3-header' id='back-btn'>CLICK HERE TO VIEW FULL RECIPE</a>
+
+    </div>
 
 
   {% endif %}

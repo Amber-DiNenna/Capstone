@@ -4,7 +4,7 @@
 
 
 <div class='form-container'>
-    <h3>UPDATE</h3>
+    <h3 class='h3-header'>ADD UPDATE</h3>
     <div class='update-form'>
         <form method="POST" action="">
             {% csrf_token %}
@@ -13,5 +13,15 @@
         </form>
     </div>
 </div>
+
+{% comment %} {{ form }}
+
+# In form_snippet.html:
+{% for field in form %}
+    <div class="form-container">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+    </div>
+{% endfor %} {% endcomment %}
 
 {% endblock content %}

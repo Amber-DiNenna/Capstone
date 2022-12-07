@@ -4,13 +4,14 @@ from .models import Update, Task, Inventory, Prep, Recipe
 class UpdateForm(ModelForm):
   class Meta:
     model = Update
-    fields = '__all__'
-    # fields = ['type', 'subject', 'description']
+    # fields = '__all__'
+    fields = ['type', 'subject', 'description']
 
 class TaskForm(ModelForm):
   class Meta:
     model = Task
-    fields = '__all__'
+    # fields = '__all__'
+    fields = ['checked']
 
 class InventoryForm(ModelForm):
   class Meta:

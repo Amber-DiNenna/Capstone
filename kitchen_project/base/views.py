@@ -6,7 +6,7 @@ from users.models import CustomUser
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from .models import Task, Update, Inventory, Prep, Recipe, Post, RecipeTasks
-from .forms import UpdateForm
+from .forms import UpdateForm, TaskForm
 
 def home(request):
     users = CustomUser.objects.all()
@@ -19,7 +19,16 @@ def checklist(request):
 
 def opening(request):
     tasks = Task.objects.all()
-    context = {'tasks': tasks}
+    form = TaskForm()
+
+    if request.method == 'POST':
+        # print(request.POST)
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/checklist/opening/')
+
+    context = {'tasks': tasks, 'form': form}
     return render(request, 'opening.html', context)
 
 def mid(request):
