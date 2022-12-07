@@ -17,7 +17,7 @@
       </tr>
       {% for todo in todos %}
       <tr>
-        <td>{{ todo.component_of }}</td>
+        <td>{{ todo.task_for }}</td>
         <td>{{ todo.name }}</td>
         <td>{{ todo.par }}</td>
         <td><input class='table-input' value='{{ todo.on_hand }}' placeholder='Enter amount on hand'></input></td>

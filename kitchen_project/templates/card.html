@@ -16,13 +16,17 @@
       <p class='recipe-card-p'>Shelf life: <span class='recipe-card-span'>{{ card.shelf_life }}</span></p>
       <p class='recipe-card-p'>Ingredients: <span class='recipe-card-span'>{{ card.ingredients }}</span></p>
       <p class='recipe-card-p'>Directions: <span class='recipe-card-span'>{{ card.directions }}</span></p>
-      <p class='recipe-card-p'>Prep tasks: <a>{{ card.prep_tasks }}</a></p>
       <p class='recipe-card-p'>Reference images: <a>{{ card.images }}<a/></p>
 
+
       <p class='update-stamp'>Last updated by: {{ card.user }} on {{ card.created }}</p>
+
+      <h3 class='h3-header'>CLICK HERE TO VIEW PREP LIST</h3>
+
+
   {% endif %}
 {% endfor %}
-  </div>
-</div>
+
+
 
 {% endblock content %}

@@ -3,11 +3,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-
-{% for user in users%}
-  <h2 class='h2-header'>WELCOME, {{ user.first_name|upper }}!</h2>
-{% endfor %}
-
+<h2 class='h2-header'>WELCOME, {{ user.first_name|upper }}!</h2>
 
 <div id='home-container'>
 
@@ -46,33 +42,26 @@
 </div>
 {% else %}
 
-<h3>LOGIN</h3>
-<form action="{% url 'base:home' %}" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Login">
-</form>
 
-<h3>REGISTER</h3>
-<form action="{% url 'users:signup' %}" method='post'>
+<div class='form-container'>
+  <h2 class='h2-header'>REGISTER</h2>
+  <form action="{% url 'users:signup' %}" method='post'>
 
-  {% csrf_token %}
-  <label name='name'>Username</label>
-  <input type='text' name='name'>
+    {% csrf_token %}
+    <label name='name'>Username</label>
+    <input type='text' name='name'>
 
-  <label name='password'>Password</label>
-  <input type='text' name='password'>
+    <label name='password'>Password</label>
+    <input type='text' name='password'>
 
-  <label name='password2'>Confirm password</label>
-  <input type='text' name='password2'>
+    <label name='password2'>Confirm password</label>
+    <input type='text' name='password2'>
 
-  <button type='submit'>Submit</button>
+    <button type='submit'>Submit</button>
 
-</form>
-
-
+  </form>
+</div>
 
 {% endif %}
-
 
 {% endblock content %}

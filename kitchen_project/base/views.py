@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from users.models import CustomUser
 from django.db.models import Q
 from django.http import HttpResponseRedirect
-from .models import Task, Update, Inventory, Prep, Recipe, Post
+from .models import Task, Update, Inventory, Prep, Recipe, Post, RecipeTasks
 from .forms import UpdateForm
 
 def home(request):
@@ -15,9 +15,6 @@ def home(request):
     return render(request, 'home.html', context)
 
 def checklist(request):
-    # tasks = Task.objects.all()
-    # context = {'tasks': tasks}
-    # return render(request, 'checklist.html', context)
     return render(request, 'checklist.html')
 
 def opening(request):
@@ -96,14 +93,14 @@ def prep(request):
     return render(request, 'prep.html', context)
 
 def recipes(request):
-    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    # q = request.GET.get('q') if request.GET.get('q') != None else ''
 
-    cards = Recipe.objects.filter(
-        Q(prep_tasks__icontains=q) |
-        Q(heading__icontains=q) |
-        Q(dish__icontains=q)
-    )
-    # cards = Recipe.objects.all()
+    # cards = Recipe.objects.filter(
+    #     Q(prep_tasks__icontains=q) |
+    #     Q(heading__icontains=q) |
+    #     Q(dish__icontains=q)
+    # )
+    cards = Recipe.objects.all()
     todos = Prep.objects.all()
     context = {'cards': cards, 'todos': todos}
     return render(request, 'recipes.html', context)
@@ -113,7 +110,9 @@ def dish(request, pk):
     recipe_number = str(recipe_number)
     cards = Recipe.objects.all()
     todos = Prep.objects.all()
-    context = {'recipe_number': recipe_number, 'cards': cards, 'todos': todos}
+    recipe_tasks = RecipeTasks.objects.all()
+    context = {'recipe_number': recipe_number, 'cards': cards, 'todos': todos, 'recipe_tasks': recipe_tasks}
+    print('!!!!!!!!!!!!!!!!', context)
     return render(request, 'card.html', context)
 
 def whiteboard(request):

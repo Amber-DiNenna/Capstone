@@ -11,19 +11,12 @@
     <div id='app'>
       {% include 'navbar.html' %}
 
-      {% if messages %}
-      <ul class="messages">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-      {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
+
 
       {% block content %}
 
       {% endblock %}
-      {% comment %} {% endif %} {% endcomment %}
+
     </div>
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

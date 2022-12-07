@@ -2,40 +2,12 @@
 {% load static %}
 {% block content %}
 
-<form action="" method="post">
-    <h2 class='h2-header'>LOGIN</h2>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Login">
-</form>
-
-{% endblock content %}
-
-
-
-
-
-{% comment %} {% if request.user.is_authenticated == False %} {% endcomment %}
-
-{% comment %} <div>
-    <form method="POST" action="">
+<div class='form-container'>
+    <form action="" method="post">
+        <h2 class='h2-header'>LOGIN</h2>
         {% csrf_token %}
-
-        <label>Username:</label>
-        <input type="text" name="username" placeholder="Enter Username"/>
-
-        <label>Password:</label>
-        <input type="password" name="password" placeholder="Enter Password"/>
-
-        <input type="submit" value="Login"/>
+        {{ form }}
+        <input type="submit" value="Login">
     </form>
 </div>
-
-<div>
-    <form method="POST" action="">
-        {% csrf_token %}
-
-        <input type="submit" value="Register"/>
-    </form>
-</div> {% endcomment %}
-{% comment %} {% endif %} {% endcomment %}
+{% endblock content %}

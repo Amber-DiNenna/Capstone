@@ -51,6 +51,12 @@ h3 {
   font-size: 2rem;
 }
 
+.h3-header {
+  font-size: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
 button {
 
   background-color: darkgray;
@@ -247,6 +253,12 @@ header {
   max-width: 40rem;
 }
 
+/* .recipe-card-a {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+} */
+
 .recipe-card-p {
   font-weight: bolder;
   font-size: 1.5rem;
@@ -329,8 +341,13 @@ tr:nth-child(even) {
 }
 
 /* FORMS ---------------------------------------- */
-.form {
+/* .form-container {
+
+} */
+
+
+/* .form {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
