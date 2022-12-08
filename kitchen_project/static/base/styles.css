@@ -40,11 +40,13 @@ a:hover {
   font-size: 3rem;
   text-align: center;
   padding: 2rem;
+  margin: 0;
 }
 
 h2 {
   color:peru;
   font-size: 2rem;
+
 }
 
 h3 {
@@ -57,6 +59,10 @@ h3 {
   text-align: center;
   padding: 2rem;
   color:peru;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 button {
@@ -73,6 +79,7 @@ button:hover {
   color: darkgray;
   /* border: .5px solid darkgray; */
 }
+
 
 /*     NAV BAR-------------------------------------------     */
 header {
@@ -175,7 +182,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-around; */
   border: 2px solid darkgray;
   width: 50%;
   height: 40rem;
@@ -184,38 +190,43 @@ header {
 }
 
 .babe-writing {
+  display: flex;
+  align-items: center;
   width: 100%;
   font-family: 'Rock Salt', cursive;
   font-size: 1rem;
   text-align: left;
-  /* padding-left: 2rem; */
   font-weight: 100;
   padding: 0;
   margin: 0;
 }
-/*
-.board-buttons-p {
-  margin: 0;
+
+.babe-writing a {
+  width: 100%;
 }
 
-.board-column-container {
+#whiteboard-input-div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0;
+  text-align: center;
+  border: 1rem solid darkgray;
 }
 
-.board-column-left {
+#whiteboard-input-needs, #whiteboard-input-todo {
   display: flex;
-  flex-direction: row;
-  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid darkgray;
+  width: 50%;
+  background-color:aliceblue;
+  padding: 1rem;
+  text-align: center;
 }
 
-.board-column-right {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-} */
+#needs-p, #todo-p {
+  display: none;
+}
 
 /* UPDATES ---------------------------------------- */
 #updates-container {
@@ -223,14 +234,53 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin: 0;
 }
 
-.update-div {
+.home-header {
+  color: darkgray;
+  font-size: 1.5rem;
+}
+
+.home-a {
+  text-align: center;
+}
+
+#home-updates-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-update-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
   border: 1px solid darkslategray;
   border-radius: .5rem;
   width: 70%;
+  height: 15rem;
   padding: 1rem;
+}
+
+.update-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid darkslategray;
+  border-radius: .5rem;
+  width: 75%;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.home-update-subject {
+  font-size: 1rem;
+  color: peru;
+  padding: 0;
+  margin: 0;
 }
 
 .new {
@@ -244,6 +294,10 @@ header {
 }
 .change {
   color: blue;
+}
+
+#update-form-header {
+  font-size: 1.5rem;
 }
 
 /* RECIPES ---------------------------------------- */
@@ -277,17 +331,19 @@ header {
   padding-left: 3rem;
   border: 2px solid darkgray;
   border-radius: .5rem;
-  padding: 1rem;
+  padding: 2rem;
   background-color:rgb(250, 235, 215, .5);
-  /* max-width: 40rem; */
   width: 75%;
 }
 
-/* .recipe-card-a {
-  text-align: center;
+.recipe-card ul {
+  padding-left: 3rem;
+}
+
+#recipe-card-p-btn {
+  display: flex;
   justify-content: center;
-  align-items: center;
-} */
+}
 
 .recipe-card-p {
   font-weight: bolder;
@@ -314,6 +370,12 @@ header {
   display: none;
 }
 
+#front-btn, #back-btn {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
 /* CHECKLISTS ---------------------------------------- */
 #checklists-container {
   display: flex;
@@ -321,26 +383,60 @@ header {
   align-items: center;
 }
 
-.checklist-div {
-  width: 75%;
+.checklist {
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  /* padding: 1rem; */
 
 }
 
-.checklist-div button {
+.checklist-div {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  width: 10rem;
-} */
+  text-align: left;
+  /* padding: 1rem; */
+  width: 100%;
+  margin: 0;
+  height: 5rem;
+}
 
-li {
+.checklist-btn-p {
+  display: flex;
+  justify-content: right;
+  margin: 0;
+  padding: 0;
+  width: 25%
+}
+
+.checklist-btn-p button {
+  margin: .1rem;
+
+}
+
+.checklist-p {
+  width: 75%;
+}
+
+/* li {
   justify-content: center;
   width: 90%;
   list-style: none;
   font-size: 1.5rem;
-}
+} */
+
+
+
+/* .checklist-p button {
+  width: 2rem;
+  margin: 1rem;
+} */
+
+/* .chk-btn, .x-btn {
+
+} */
 
 /* TABLES ---------------------------------------- */
 .table-div {
@@ -381,14 +477,43 @@ tr:nth-child(even) {
   width: 75%;
 }
 
+#prep-btn-2 {
+  display: none;
+}
+
 /* FORMS ---------------------------------------- */
-/* .form-container {
-
-} */
-
-
-/* .form {
+#login-form, #reg-form {
   display: flex;
-  align-items: center;
   justify-content: center;
-} */
+}
+
+.update-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#update-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+#update-form p {
+  display: flex;
+  width: 90%;
+}
+
+#update-form input {
+  width: 90%
+}
+
+#login-form-btn, #update-form-btn {
+  background-color: darkgray;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  padding: .5rem;
+  border: none;
+  border-radius: .25rem;
+}

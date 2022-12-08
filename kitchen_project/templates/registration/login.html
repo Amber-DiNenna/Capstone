@@ -3,11 +3,11 @@
 {% block content %}
 
 <div class='form-container'>
-    <form action="" method="post">
-        <h2 class='h2-header'>LOGIN</h2>
+    <h2 class='h2-header'>LOGIN</h2>
+    <form id='login-form' action="" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Login">
+        <input id='login-form-btn' type="submit" value="Login">
     </form>
 </div>
 {% endblock content %}

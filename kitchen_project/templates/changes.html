@@ -4,21 +4,11 @@
 
 <h2 class='h2-header'>UPDATES FEED</h2>
 
-
-{% comment %} <div class='update-form'>
-  <h3 class='update-form-header'>Add an Update</h3>
-  <form method="POST" action="">
-
-      {% csrf_token %}
-      {{ form }}
-      <input type="submit" value="Submit Update"/>
-  </form>
-</div> {% endcomment %}
-
 <div id='updates-container'>
-  <h3 class='update-form-header'>
-    <a href="create-update/">Add an Update</a>
-  </h3>
+
+  <h3><a href="create-update/">( ADD NEW )</a></h3>
+  <br>
+
   {% for update in updates %}
   <div class='update-div'>
     {% if update.type == 'OUT' %}
@@ -33,8 +23,10 @@
     <h2>{{ update.subject }}</h2>
     <p>{{ update.description }}</p>
     {% if request.user == update.user %}
-    <a href="update-update/{{ update.id }}">EDIT</a>
-    <a href="delete-update/{{ update.id }}">DELETE</a>
+    <p>
+      <a class='a-btn' href="update-update/{{ update.id }}">( EDIT )</a>
+      <a class='a-btn' href="delete-update/{{ update.id }}">( DELETE )</a>
+    </p>
     {% endif %}
     <p class='timestamp'>{{ update.user }} @ {{ update.created }}</p>
   </div>

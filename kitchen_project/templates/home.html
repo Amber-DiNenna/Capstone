@@ -3,11 +3,76 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<h2 class='h2-header'>WELCOME, {{ user.first_name|upper }}!</h2>
+<h2 class='h2-header'>EMPLOYEE DASHBOARD</h2>
+<h3>WELCOME BACK, {{ user.first_name|upper }}!</h3>
 
 <div id='home-container'>
-
   <div id='home-left'>
+    <div id='home-updates-container'>
+      <h3 class='home-header'>RECENT UPDATES
+      </h3>
+      {% for update in updates %}
+      <div class='home-update-div'>
+        {% if update.type == 'OUT' %}
+        <h4 class='out'>{{ update.type }}</h4>
+        {% elif update.type == 'NEW' %}
+        <h4 class='new'>{{ update.type }}</h4>
+        {% elif update.type == 'CHANGE' %}
+        <h4 class='change'>{{ update.type }}</h4>
+        {% elif update.type == 'GONE' %}
+        <h4 class='gone'>{{ update.type }}</h4>
+        {% endif %}
+        <h4 class='home-update-subject'>{{ update.subject }}</h4>
+        <p>{{ update.description }}</p>
+      </div>
+      <br>
+        {% endfor %}
+      <a class='home-a' href="/changes">( MORE )</a>
+    </div>
+
+
+
+  </div>
+
+
+  <div id='home-right'>
+
+    <div id='home-todo-container'>
+
+    </div>
+  </div>
+
+</div>
+{% else %}
+
+
+<div class='form-container'>
+  <h2 class='h2-header'>REGISTER</h2>
+  <form id='reg-form' action="{% url 'users:signup' %}" method='post'>
+
+    {% csrf_token %}
+    <label name='name'>Username</label>
+    <input type='text' name='name'>
+
+    <label name='password'>Password</label>
+    <input type='text' name='password'>
+
+    <label name='password2'>Confirm password</label>
+    <input type='text' name='password2'>
+
+    <button type='submit'>Submit</button>
+
+  </form>
+</div>
+
+{% endif %}
+
+{% endblock content %}
+
+
+
+
+  {% comment %} <div id='home-left'>
     <div id='main-menu-div'>
       <a href='changes/'>
         <h3>UPDATES FEED</h3>
@@ -33,35 +98,4 @@
         <h3>INVENTORY SHEET</h3>
       </a>
     </div>
-  </div>
-
-  <div id='home-right'>
-
-  </div>
-
-</div>
-{% else %}
-
-
-<div class='form-container'>
-  <h2 class='h2-header'>REGISTER</h2>
-  <form action="{% url 'users:signup' %}" method='post'>
-
-    {% csrf_token %}
-    <label name='name'>Username</label>
-    <input type='text' name='name'>
-
-    <label name='password'>Password</label>
-    <input type='text' name='password'>
-
-    <label name='password2'>Confirm password</label>
-    <input type='text' name='password2'>
-
-    <button type='submit'>Submit</button>
-
-  </form>
-</div>
-
-{% endif %}
-
-{% endblock content %}
+  </div> {% endcomment %}

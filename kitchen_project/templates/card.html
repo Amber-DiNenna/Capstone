@@ -25,35 +25,32 @@
 
       <p class='stamp'>Last updated by: {{ card.user }} on {{ card.created }}</p>
 
-      <a class='h3-header' id='front-btn'>CLICK HERE TO VIEW PREP TASKS</a>
+      <a id='front-btn'>( VIEW PREP TASKS )</a>
 
     </div>
 
     <div class='recipe-card' id='back'>
-
       <h2 class='recipe-card-title'>{{ card.dish }}</h2>
 
       <ul class='recipe-card-p'>Prep Tasks:
       {% for recipe_task in recipe_tasks %}
-        {% comment %} {% if recipe_task.recipe == card.dish %} {% endcomment %}
-          {% comment %} <li class='recipe-card-li'>{{ recipe_task.recipe }}{{ card.dish }}</li> {% endcomment %}
           <li class='recipe-card-li'>{{ recipe_task.prep }}</li>
-        {% comment %} {% endif %} {% endcomment %}
       {% endfor %}
       </ul>
-
-      <button>ADD TASKS TO WHITEBOARD</button>
+      <p id='recipe-card-p-btn'><button>ADD TASKS TO WHITEBOARD</button></p>
 
       <p class='stamp'>Last updated by: {{ card.user }} on {{ card.created }}</p>
 
-      <a class='h3-header' id='back-btn'>CLICK HERE TO VIEW FULL RECIPE</a>
+      <a id='back-btn'>( VIEW FULL RECIPE )</a>
 
     </div>
-
-
   {% endif %}
 {% endfor %}
 
-
-
 {% endblock content %}
+
+
+        {% comment %} {% if recipe_task.recipe == card.dish %} {% endcomment %}
+          {% comment %} <li class='recipe-card-li'>{{ recipe_task.recipe }}{{ card.dish }}</li> {% endcomment %}
+
+             {% comment %} {% endif %} {% endcomment %}

@@ -6,18 +6,22 @@
 
 
 <div id='checklists-container'>
-  <div class='checklist-div'>
-    <ul><h2>MID</h2></ul>
-    {% for task in tasks %}
-      {% if task.shift == 'Mid' %}
-    <li>
-      <input type="checkbox" id="{{ task.name }}" name="{{ task.name }}" value="{{ task.checked }}">
-      <label for="{{ task.name }}">{{ task.name }}</label>
-    </li>
-      {% endif %}
-    {% endfor %}
-    <button type='submit'>DONE</button><button type='submit'>CLEAR</button>
+  <h3>MID</h3>
+  <div class='checklist'>
+  {% for task in tasks %}
+    {% if task.shift == 'Mid' %}
+      <div class='checklist-div'>
+        <p class='checklist-btn-p'>
+          <button class='chk-btn'>&#10004;</button>
+          <button class='x-btn'>&#10006;</button>
+        </p>
+        <p class='checklist-p'>{{ task.name }}</p>
+      </div>
+    {% endif %}
+  {% endfor %}
   </div>
+  <button type='submit'>DONE</button>
+  <button type='submit'>CLEAR</button>
 </div>
 
 {% endblock content %}

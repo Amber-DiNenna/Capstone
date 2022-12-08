@@ -13,17 +13,21 @@
       <p class='babe-writing'>
         <button class='chk-btn'>&#10004;</button>
         <button class='x-btn'>&#10006;</button>
-        <a class='babe-writing'>{{ item.name }}</a>
+        <a>{{ item.name }}</a>
       </p>
       {% endif %}
     {% endfor %}
+    <p id='needs-p'>
+      <button id='needs-chk-btn'>&#10004;</button>
+      <button id='needs-x-btn'>&#10006;</button>
+      <a id='needs-a'></a>
+    </p>
   </div>
 
   <br>
 
   <div id='todo'>
     <h2>TO DO</h2>
-
     {% for todo in todos %}
       {% if todo.to_whiteboard == True %}
       <p class='babe-writing'>
@@ -33,15 +37,25 @@
       </p>
       {% endif %}
     {% endfor %}
+    <p id='todo-p'>
+      <button id='todo-chk-btn'>&#10004;</button>
+      <button id='todo-x-btn'>&#10006;</button>
+      <a id='todo-a'></a>
+    </p>
   </div>
 
   <br><br>
+
 </div>
 
-{% comment %} <div id='whiteboard-input'>
-  <input placeholder='put form here?'></input>
-</div> {% endcomment %}
 
+<div id='whiteboard-input-div'>
+  <input placeholder='Enter NEEDS item' id='whiteboard-input-needs'></input>
+
+
+  <input placeholder='Enter TO DO task' id='whiteboard-input-todo'></input>
+
+</div>
 
 {% endblock content %}
 

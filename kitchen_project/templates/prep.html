@@ -8,7 +8,10 @@
   <div class='table-div'>
     <table>
       <tr>
-        <th><button>&#8593;</button><br>FOR<br><button>&#8595;</button></th>
+        <th>FOR
+          <button id='prep-btn-1'>&#8593;</button>
+          {% comment %} <button id='prep-btn-2'>&#8595;</button> {% endcomment %}
+        </th>
         <th>PREP TASK</th>
         <th>PAR</th>
         <th>ON HAND</th>
@@ -16,7 +19,9 @@
         <th>WHITEBOARD</th>
       </tr>
       {% for todo in todos %}
+        {% comment %} {% for recipe_task in recipe_tasks %} {% endcomment %}
       <tr>
+          {% comment %} {% if recipe_task.prep == todo.name %} {% endcomment %}
         <td>{{ todo.task_for }}</td>
         <td>{{ todo.name }}</td>
         <td>{{ todo.par }}</td>
@@ -24,6 +29,8 @@
         <td><input class='table-input' value='{{ todo.need }}' placeholder='Enter amount needed'></input></td>
         <td><button value='{{ todo.to_whiteboard }}'>ADD</button></td>
       </tr>
+          {% comment %} {% endif %}
+        {% endfor %} {% endcomment %}
       {% endfor %}
     </table>
   </div>

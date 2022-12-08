@@ -98,7 +98,8 @@ def inventory(request):
 
 def prep(request):
     todos = Prep.objects.all()
-    context = {'todos': todos}
+    recipe_tasks = RecipeTasks.objects.all()
+    context = {'todos': todos, 'recipe_tasks': recipe_tasks}
     return render(request, 'prep.html', context)
 
 def recipes(request):
