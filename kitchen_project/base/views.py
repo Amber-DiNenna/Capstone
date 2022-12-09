@@ -103,13 +103,13 @@ def prep(request):
     return render(request, 'prep.html', context)
 
 def recipes(request):
-    # q = request.GET.get('q') if request.GET.get('q') != None else ''
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
 
-    # cards = Recipe.objects.filter(
-    #     Q(prep_tasks__icontains=q) |
-    #     Q(heading__icontains=q) |
-    #     Q(dish__icontains=q)
-    # )
+    cards = Recipe.objects.filter(
+        # Q(prep_tasks__icontains=q) |
+        Q(heading__icontains=q) |
+        Q(dish__icontains=q)
+    )
     cards = Recipe.objects.all()
     todos = Prep.objects.all()
     context = {'cards': cards, 'todos': todos}

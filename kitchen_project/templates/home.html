@@ -4,7 +4,8 @@
 
 {% if user.is_authenticated %}
 <h2 class='h2-header'>EMPLOYEE DASHBOARD</h2>
-<h3>WELCOME BACK, {{ user.first_name|upper }}!</h3>
+
+<h3 id='home-welcome-h3'>WELCOME BACK, {{ user.first_name|upper }}!</h3>
 
 <div id='home-container'>
   <div id='home-left'>
@@ -29,16 +30,25 @@
         {% endfor %}
       <a class='home-a' href="/changes">( MORE )</a>
     </div>
-
-
-
   </div>
 
 
   <div id='home-right'>
+    <div id='home-msg-container'>
+      <h3 class='home-header'>MESSAGES</h3>
+      <div id='home-msg-div'>
+        <p id='home-msg'>No new messages...</p>
+      </div>
+    </div>
 
     <div id='home-todo-container'>
-
+      <h3 class='home-header'>PINNED TASKS</h3>
+      <div id='home-todo-div'>
+        <p id='home-todo'>No assigned tasks...</p>
+      </div>
+      <div id='home-input-div'>
+        <p id='home-input'>Add task to personal TO DO list</p>
+      </div>
     </div>
   </div>
 

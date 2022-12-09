@@ -17,7 +17,7 @@ font-family: 'Thasadith', sans-serif; (tight thin normal)*/
   padding: 0;
   box-sizing: border-box;
   margin: 1rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -25,6 +25,7 @@ body {
   background-color:white;
   color:darkslategray;
   font-weight: 900;
+  letter-spacing: .1rem;
 }
 
 a {
@@ -50,7 +51,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
@@ -72,6 +73,7 @@ button {
   padding: .5rem;
   border: none;
   border-radius: .25rem;
+  letter-spacing: .1rem;
 }
 
 button:hover {
@@ -148,15 +150,90 @@ header {
 .dropdown:hover .dropdown-content {display: block;}
 
 /* HOME ---------------------------------------------- */
+#home-welcome-h3 {
+  margin: 2rem;
+  padding: 1rem;
+}
+
 #home-container {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  /* margin: 0; */
+  margin-top: 2rem;
+}
+
+#home-left {
   margin: 0;
 }
 
-#home-left, #home-right {
+#home-right {
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
+
+#home-msg-container {
+  height: 25%;
+}
+
+#home-msg-div {
+  height: 75%;
+  border: 2px solid darkgray;
+  border-radius: .5rem;
+  margin: 2rem;
+}
+
+#home-msg {
+  text-align: center;
+  font-style: italic;
+  color: darkgray;
+}
+
+#home-todo-container {
+  height: 75%;
+}
+
+#home-todo-div {
+  display: flex;
+  justify-content: center;
+  height: 80%;
+  border: 1rem solid darkgray;
+
+}
+
+#home-todo {
+  margin: 1rem;
+  border: 2px solid darkgray;
+  width: 95%;
+  background-color:aliceblue;
+  padding: .5rem;
+  text-align: center;
+  font-style: italic;
+  color: darkgray;
+}
+
+
+#home-input-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  border: 1rem solid darkgray;
+
+}
+
+#home-input{
+  margin: 1rem;
+  border: 2px solid darkgray;
+  width: 95%;
+  background-color:aliceblue;
+  padding: .5rem;
+  text-align: center;
+}
+
 
 #main-menu-div {
   display: flex;
@@ -235,6 +312,11 @@ header {
   align-items: center;
   justify-content: space-around;
   margin: 0;
+}
+
+#update-add-h3 {
+  text-align: center;
+  font-size: 2rem;
 }
 
 .home-header {
@@ -317,6 +399,7 @@ header {
   flex-direction: column;
   align-items: center;
 }
+
 .recipe-card-title {
   font-size: 2.5rem;
   text-align: center;
@@ -333,7 +416,9 @@ header {
   border-radius: .5rem;
   padding: 2rem;
   background-color:rgb(250, 235, 215, .5);
-  width: 75%;
+  /* max-width: 50rem; */
+  width: 40rem;
+  min-height:55rem;
 }
 
 .recipe-card ul {
@@ -358,6 +443,8 @@ header {
 .recipe-card-li {
   color: darkslategray;
   list-style: none;
+  padding: .5rem;
+  padding-left: 3rem;
 }
 
 .stamp {
@@ -368,6 +455,7 @@ header {
 
 #back {
   display: none;
+  justify-content: space-evenly;
 }
 
 #front-btn, #back-btn {
@@ -381,23 +469,20 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 2rem;
 }
 
 .checklist {
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 1rem; */
-
 }
 
 .checklist-div {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: left;
-  /* padding: 1rem; */
+  justify-content: right;
   width: 100%;
   margin: 0;
   height: 5rem;
@@ -408,35 +493,15 @@ header {
   justify-content: right;
   margin: 0;
   padding: 0;
-  width: 25%
-}
-
-.checklist-btn-p button {
-  margin: .1rem;
-
+  max-width: 10rem;
 }
 
 .checklist-p {
-  width: 75%;
-}
-
-/* li {
-  justify-content: center;
-  width: 90%;
-  list-style: none;
+  width: 60%;
+  margin: 0;
+  padding-left: .25rem;
   font-size: 1.5rem;
-} */
-
-
-
-/* .checklist-p button {
-  width: 2rem;
-  margin: 1rem;
-} */
-
-/* .chk-btn, .x-btn {
-
-} */
+}
 
 /* TABLES ---------------------------------------- */
 .table-div {
@@ -516,4 +581,17 @@ tr:nth-child(even) {
   padding: .5rem;
   border: none;
   border-radius: .25rem;
+}
+
+#recipe-search-form {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+#recipe-search-form input{
+  text-align: center;
+  padding: .5rem;
+  width: 15rem;
+  letter-spacing: .1rem;
+  font-family: 'Raleway', sans-serif;
 }

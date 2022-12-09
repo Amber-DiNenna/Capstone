@@ -2,8 +2,9 @@
 {% load static %}
 {% block content %}
 
-<h2 class='h2-header'>CHECKLISTS</h2>
+{% comment %} <a href='/checklist'><h2 class='h2-header'>CHECKLISTS</h2></a> {% endcomment %}
 
+<h2 class='h2-header'>CHECKLISTS</h2>
 
 <div id='checklists-container'>
   <h3>MID</h3>
@@ -20,8 +21,10 @@
     {% endif %}
   {% endfor %}
   </div>
-  <button type='submit'>DONE</button>
-  <button type='submit'>CLEAR</button>
+  <div>
+    <button type='submit'>DONE</button>
+    <button type='submit'>CLEAR</button>
+  </div>
 </div>
 
 {% endblock content %}
