@@ -30,6 +30,7 @@
     </div>
 
     <div class='recipe-card' id='back'>
+
       <h2 class='recipe-card-title'>{{ card.dish }}</h2>
 
       <ul class='recipe-card-p'>Prep Tasks:
@@ -37,6 +38,7 @@
           <li class='recipe-card-li'>{{ recipe_task.prep }}</li>
       {% endfor %}
       </ul>
+
       <p id='recipe-card-p-btn'><button>ADD TASKS TO WHITEBOARD</button></p>
 
 
@@ -51,7 +53,7 @@
 {% endblock content %}
 
 
-        {% comment %} {% if recipe_task.recipe == card.dish %} {% endcomment %}
-          {% comment %} <li class='recipe-card-li'>{{ recipe_task.recipe }}{{ card.dish }}</li> {% endcomment %}
+    {% comment %} {% if recipe_task.recipe == card.dish %} {% endcomment %}
+      {% comment %} <li class='recipe-card-li'>{{ recipe_task.recipe }}{{ card.dish }}</li> {% endcomment %}
 
-             {% comment %} {% endif %} {% endcomment %}
+          {% comment %} {% endif %} {% endcomment %}

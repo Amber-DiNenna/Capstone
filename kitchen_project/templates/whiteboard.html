@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
-<script src="{% static '/app.js' %}"></script>
+{% comment %} <script src="{% static '/app.js' %}"></script> {% endcomment %}
 <h2 class='h2-header'>WHITEBOARD</h2>
 
 
@@ -43,9 +43,7 @@
       <a id='todo-a'></a>
     </p>
   </div>
-
   <br><br>
-
 </div>
 
 
@@ -54,71 +52,6 @@
 
 
   <input placeholder='Enter TO DO task' id='whiteboard-input-todo'></input>
-
 </div>
 
 {% endblock content %}
-
-{% comment %}
-
-I GUESS USE JS TO MAKE THE  CHECK AND THE X DO STUFF? MAYBE MAKE THEM @CLICK BUTTONS?
-
-V = CROSS OUT WITH CSS?
-X = CHANGE TO WHITEBOARD TO FALSE AND CLEAR OUT NEED FIELD?
-
-(LOOK AT VUE TO DO)
-
-{% endcomment %}
-
-
-
-
-
-
-
-
-
-{% comment %}
-
-<h2 class='h2-header'>WHITEBOARD</h2>
-
-
-<div id='whiteboard'>
-  <div id='needs'>
-    <h2>NEEDS</h2>
-    <div class='board-column-container'>
-    {% for item in items %}
-      {% if item.to_whiteboard == True %}
-      <div class='board-column-left'>
-        <p class='babe-writing'>{{ item.name }}</p>
-      </div>
-      <div class='board-column-right'>
-        <p class='board-buttons-p'>
-          <button>&#10004;</button>
-          <button>&#10006;</button>
-        </p>
-      </div>
-      {% endif %}
-    {% endfor %}
-    </div>
-  </div>
-
-  <br>
-
-  <div id='todo'>
-    <h2>TO DO</h2>
-
-    {% for todo in todos %}
-      {% if todo.to_whiteboard == True %}
-      <p class='babe-writing'>&#10004; &#10006;<a>{{ todo.name }}</a></p>
-      {% endif %}
-    {% endfor %}
-  </div>
-
-  <br><br>
-</div>
-<div id='whiteboard-input'>
-  <input placeholder='put form here?'></input>
-</div>
-
-{% endcomment %}

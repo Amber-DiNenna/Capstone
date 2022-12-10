@@ -9,21 +9,8 @@
     <title>MicroMan Kitchen Manager</title>
   </head>
   <body>
-    {% comment %} <div id='app'> {% endcomment %}
       {% include 'navbar.html' %}
-
-
-
       {% block content %}
-
       {% endblock %}
-
-    {% comment %} </div>
-    <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-    <!-- Import file.js -->
-    <script src="{% static '/app.js' %}"></script>
-    <script> const mountApp = app.mount('#app')</script> {% endcomment %}
   </body>
 </html>

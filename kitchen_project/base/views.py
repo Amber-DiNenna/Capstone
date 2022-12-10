@@ -1,11 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
 from users.models import CustomUser
 from django.db.models import Q
-from django.http import HttpResponseRedirect
-from .models import Task, Update, Inventory, Prep, Recipe, Post, RecipeTasks
+from .models import Task, Update, Inventory, Prep, Recipe, RecipeTasks
 from .forms import UpdateForm, TaskForm
 
 def home(request):
@@ -22,7 +18,6 @@ def opening(request):
     form = TaskForm()
 
     if request.method == 'POST':
-        # print(request.POST)
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
@@ -46,7 +41,6 @@ def changes(request):
     form = UpdateForm()
 
     if request.method == 'POST':
-        # print(request.POST)
         form = UpdateForm(request.POST)
         if form.is_valid():
             form.save()
@@ -60,12 +54,10 @@ def createUpdate(request):
     form = UpdateForm()
 
     if request.method == 'POST':
-        # print(request.POST)
         form = UpdateForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/changes')
-
 
     context = {'updates': updates, 'form': form}
     return render(request, 'update_form.html', context)
@@ -132,14 +124,9 @@ def whiteboard(request):
     return render(request, 'whiteboard.html', context)
 
 def HomeRegister(request):
-    # example of password requirements
     if len(request.POST['password']) < 8:
         return redirect('base:home')
-
     if request.POST['password2'] == request.POST['password']:
-        # print('password', request.POST['password'])
-        # print('hashed password', make_password(request.POST['password']))
-
         user_model = CustomUser(username=request.POST['name'], password=(request.POST['password']))
         user_model.save()
     else:

@@ -5,7 +5,6 @@
 {% if request.user.is_authenticated %}
   <div class="dropdown">
     <button class="dropbtn"><img id='sharpie' src="{% static 'base/sharpie.jpeg' %}" alt="sharpie"></button>
-
     <div class="dropdown-content">
       <a href="/messages">MESSAGES</a>
       <a href="/changes">UPDATES FEED</a>
@@ -20,12 +19,5 @@
 {% else %}
   <h3><a href="{% url 'login' %}">LOGIN</a></h3>
 {% endif %}
-
 </header>
 <hr>
-
-
-
-  {% comment %} <form method="GET" action="home/">
-    <input type="text" name="q" placeholder="Search"/>
-  </form> {% endcomment %}
