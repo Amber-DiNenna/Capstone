@@ -595,7 +595,7 @@ tr:nth-child(even) {
   width: 5rem;
 }
 
-#login-form-btn, #update-form-btn{
+#login-form-btn, #update-form-btn, #delete-form input, #delete-form a {
   background-color: darkgray;
   color: white;
   font-family: 'Raleway', sans-serif;
