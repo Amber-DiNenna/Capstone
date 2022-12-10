@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
 
+<h2 class='h2-header'>LOGIN</h2>
 <div class='form-container'>
-    <h2 class='h2-header'>LOGIN</h2>
     <form id='login-form' action="" method="post">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
         <input id='login-form-btn' type="submit" value="Login">
     </form>
 </div>

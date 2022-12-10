@@ -56,8 +56,8 @@
 {% else %}
 
 
+<h2 class='h2-header'>REGISTER</h2>
 <div class='form-container'>
-  <h2 class='h2-header'>REGISTER</h2>
   <form id='reg-form' action="{% url 'users:signup' %}" method='post'>
 
     {% csrf_token %}

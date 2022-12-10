@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Alumni+Sans+Pinstripe&family=Cairo+Play:wght@700&family=Kaushan+Script&family=Megrim&family=News+Cycle&family=Notable&family=Raleway:wght@100&family=Roboto+Slab:wght@100&family=Rock+Salt&family=Thasadith&display=swap');
 
-/* font-family: 'Cairo Play', cursive;
-font-family: 'Kaushan Script', cursive; (sharpie)
-font-family: 'Megrim', cursive; (weird triangles)
-font-family: 'Roboto Slab', serif; (good for lists and whatever)
-font-family: 'Rock Salt', cursive; (babes handwriting)
-
-font-family: 'Advent Pro', sans-serif; (tight and very thin)
-font-family: 'News Cycle', sans-serif; (tight thin normal)
-font-family: 'Notable', sans-serif; (wide and thick)
-font-family: 'Raleway', sans-serif; (tight, matches triangles)
-font-family: 'Thasadith', sans-serif; (tight thin normal)*/
-
 * {
   margin: 0;
   padding: 0;
@@ -353,7 +341,7 @@ header {
   text-align: center;
   border: 1px solid darkslategray;
   border-radius: .5rem;
-  width: 75%;
+  width: 50%;
   padding: 1rem;
   margin-top: 1rem;
 }
@@ -547,9 +535,22 @@ tr:nth-child(even) {
 }
 
 /* FORMS ---------------------------------------- */
-#login-form, #reg-form {
+.form-container {
+  /* width: 50%; */
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+#login-form, #reg-form {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  width: 50%;
+  align-items: center;
+
 }
 
 .update-form-container {
@@ -562,25 +563,47 @@ tr:nth-child(even) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+
+  /* width: 50%; */
 }
 
 #update-form p {
   display: flex;
-  width: 90%;
+  flex-direction: column;
+  width: 30rem;
+  letter-spacing: .1rem;
+  font-family: 'Raleway', sans-serif;
 }
 
-#update-form input {
-  width: 90%
+#update-form input, #update-form textarea, #update-form select {
+  /* text-align: center; */
+  padding: .5rem;
+  /* width: 15rem; */
+  letter-spacing: .1rem;
+  font-family: 'Raleway', sans-serif;
+  /* width: 100%; */
 }
 
-#login-form-btn, #update-form-btn {
+#reg-form input, #login-form input{
+  letter-spacing: .1rem;
+  font-family: 'Raleway', sans-serif;
+  padding: .5rem;
+}
+
+#reg-form button {
+
+  width: 5rem;
+}
+
+#login-form-btn, #update-form-btn{
   background-color: darkgray;
   color: white;
   font-family: 'Raleway', sans-serif;
   padding: .5rem;
   border: none;
   border-radius: .25rem;
+  width: 5rem;
+  text-align: center;
 }
 
 #recipe-search-form {
@@ -595,3 +618,11 @@ tr:nth-child(even) {
   letter-spacing: .1rem;
   font-family: 'Raleway', sans-serif;
 }
+
+/* .errorlist input {
+  text-align: center;
+  padding: .5rem;
+  width: 15rem;
+  letter-spacing: .1rem;
+  font-family: 'Raleway', sans-serif;
+} */
