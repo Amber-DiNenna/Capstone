@@ -145,3 +145,6 @@ LOGIN_REDIRECT_URL = 'base:home'
 LOGOUT_REDIRECT_URL = 'base:home'
 
 LOGIN_URL = 'login'
+
+import django_on_heroku
+django_on_heroku.settings(locals())
